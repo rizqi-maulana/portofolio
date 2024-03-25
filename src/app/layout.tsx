@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     default: "Rizqi Maulana | Maulanya",
     template: '%s | Maulanya',
   },
+  icons: {
+    icon: '../assets/icon/icon.ico'
+  },
   description: "Hi, I'm Rizqi Maulana or often called Maulana and I'm a web developer, this is my portfolio, explaining my area of ​​expertise and what projects I've created.",
   keywords: 'Rizqi Maulana Portofolio Maulanya',
   openGraph: {
