@@ -1,0 +1,130 @@
+"use client"
+import Image from 'next/image'
+import { FaGithub } from "react-icons/fa";
+import { MdOpenInNew } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import UpdateProject from '../(modals)/update-project/updateproject';
+import { useSearchParams } from 'next/navigation';
+import clsx from 'clsx';
+import { fetchData } from '@/app/api/fetch-token/fetchdata';
+import CryptoJS from 'crypto-js';
+
+interface ProjectData {
+    title: string, description: string, tech: Array<any>, website: string, github: string, thumb: string, id: string,
+}
+
+
+export default function Projectcard({ title, description, tech, website, github, thumb, id }: ProjectData) {
+    const searchParams = useSearchParams()
+    const [ShowUpdate, SetShowUpdate] = useState(false)
+    const [userToken, setUserToken] = useState<string>()
+    const SecretKey = process.env.NEXT_PUBLIC_SECRET_KEY
+    const [access, setAccess] = useState<boolean>(false)
+    const HandleDelete = async (id: string) => {
+        const formdata = new FormData()
+        formdata.append('id', id)
+        const response = await fetch('/api/delete-project', {
+            method: "POST",
+            body: formdata
+        })
+        const data = await response.json()
+        if (data.status === 'success') return;
+        if (data.status === 'error') console.log(data.error.message);
+
+    }
+
+    const ShowUpdateForm = () => {
+        if (searchParams.get('id')) {
+            SetShowUpdate(true)
+
+        } else {
+
+            SetShowUpdate(false)
+
+        }
+
+    }
+
+    useEffect(() => {
+        fetchData()
+            .then(data => {
+                setUserToken(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+    }, [])
+    useEffect(() => {
+        const token = localStorage.getItem('token')
+
+        if (token) {
+            if (SecretKey) {
+                const accessToken = CryptoJS.AES.decrypt(token, SecretKey).toString(CryptoJS.enc.Utf8)
+                if (userToken === accessToken) {
+                    setAccess(true)
+                }
+            } else {
+                console.log(' no secret key');
+            }
+        }
+    }, [userToken, SecretKey])
+
+    return (
+        <>
+            {/* {
+                ShowUpdate && <UpdateProject closeModal={SetShowUpdate} />
+            } */}
+            <div className="w-[95%] h-max md:w-[500px] md:h-max bg-[#151527] rounded-[5px] relative flex items-center flex-col md:mx-10 md:mt-60 mt-28">
+                <Image
+                    src={thumb}
+                    className="w-max h-[150px] md:w-max md:h-[280px] object-cover absolute md:top-[-200px] top-[-100px] rounded-[5px]"
+                    width={150}
+                    height={150}
+                    alt="Project Image"
+                    priority
+                />
+                <div className='p-2 md:p-4 pt-16 md:pt-24 h-[210px] md:h-[280px] flex w-full'>
+                    <div className='px-2'>
+                        <h2 className='font-bold md:text-xl text-xs'>{title}</h2>
+                        <p className='md:text-sm text-[10px]'>{description}</p>
+                        <div className='flex mt-2'>
+                            {
+                                tech.map((tech: any) => (
+                                    <Image
+                                        key={`${tech.tech}${Math.random()}`}
+                                        src={tech.icon}
+                                        className='md:w-[25px] md:h-[25px] mr-1 md:mr-1 w-[15px] h-[15px]'
+                                        width={15}
+                                        height={15}
+                                        alt="Tech Stack"
+                                        priority
+                                    />
+
+
+                                ))
+                            }
+                        </div>
+                        <div className="flex absolute bottom-2 flex-wrap">
+                            <a href={github} className={clsx('flex mr-3', { 'hidden mr-0': github === null })} target="_blank" rel="noopener noreferrer"><FaGithub /> <p className='ml-2 md:text-sm text-[10px]'>Repository</p></a>
+                            <a href={website} className={clsx('flex', { 'hidden': website === null })} target="_blank" rel="noopener noreferrer"> <MdOpenInNew /> <p className='ml-2 md:text-sm text-[10px]'>Visit</p></a>
+
+                            {
+                                access && (
+                                    <>
+                                        <Link href={`?id=${id}`} onClick={() => ShowUpdateForm()} className='flex'> <FaEdit className='ml-3' /> <p className='ml-2 md:text-sm text-[10px]'>Update</p></Link>
+                                        <button className='flex text-red-400' onClick={() => HandleDelete(id)}> <MdDelete className='ml-3' /> <p className='ml-2 md:text-sm text-[10px]'>Delete</p></button>
+                                    </>
+                                )
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
