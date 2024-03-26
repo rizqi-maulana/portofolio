@@ -42,8 +42,6 @@ export default function LoginElement() {
                 if (userToken === accessToken) {
                     setAccess(true)
                 }
-            } else {
-                console.log(' no secret key');
             }
         }
     }, [userToken, SecretKey])
@@ -63,8 +61,6 @@ export default function LoginElement() {
             if (PasswordKey && SecretKey) {
                 const decryptUserPassword = CryptoJS.AES.decrypt(userData.password, PasswordKey).toString(CryptoJS.enc.Utf8);
 
-                console.log('pw saat login:', password);
-
                 if (userData.email === email && decryptUserPassword === password) {
                     const encryptedUserId = CryptoJS.AES.encrypt(userData.token, SecretKey).toString();
                     localStorage.setItem('token', encryptedUserId);
@@ -74,11 +70,7 @@ export default function LoginElement() {
                     setErrormsg('Email or Password is Wrong');
                     setErrorstats(true);
                 }
-            } else {
-                console.log('no passowrd key or secret key');
-
             }
-
         } else {
             setErrormsg('Email not found');
             setErrorstats(true);

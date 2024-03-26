@@ -56,8 +56,6 @@ export default function MobileVavbar() {
                 if (userToken === accessToken) {
                     setAccess(true)
                 }
-            } else {
-                console.log(' no secret key');
             }
         }
     }, [userToken, SecretKey])

@@ -57,8 +57,6 @@ export const ProjectsElement = () => {
             if (userToken === accessToken) {
                 setAccess(true);
             }
-        } else {
-            console.log('Token or secret key not available');
         }
 
 

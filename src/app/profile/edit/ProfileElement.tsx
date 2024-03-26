@@ -53,8 +53,6 @@ export default function ProfileElement() {
                 // SetTelegram(data[0].telegram);
                 // SetGithub(data[0].github);
                 // SetInstagram(data[0].instagram);
-            } else {
-                console.log(data.error, data.error.message)
             }
 
         }
@@ -77,8 +75,6 @@ export default function ProfileElement() {
                 if (userToken === accessToken) {
                     setAccess(true)
                 }
-            } else {
-                console.log(' no secret key');
             }
         }
     }, [userToken, SecretKey])
@@ -152,7 +148,6 @@ export default function ProfileElement() {
                 router.push('/')
             }, 4000);
         }
-        if (data.status === 'error') console.log(data.message);
     }
 
     const handleImageUpload = async (event: any) => {

@@ -37,8 +37,6 @@ export default function Profile() {
             SetPhoto(data[0].photo);
 
 
-        } else {
-            console.log(data.error, data.error.message)
         }
 
     }
@@ -49,8 +47,6 @@ export default function Profile() {
         const data = await response.json()
         if (data) {
             SetMedia(data);
-        } else {
-            console.log(data.error, data.error.message)
         }
     }
 

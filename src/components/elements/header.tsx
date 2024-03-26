@@ -55,8 +55,6 @@ export default function Header() {
             if (data) {
                 SetPhoto(data[0].photo);
 
-            } else {
-                console.log(data.error, data.error.message)
             }
         }
     }, [])
@@ -70,8 +68,6 @@ export default function Header() {
                 if (userToken === accessToken) {
                     setAccess(true)
                 }
-            } else {
-                console.log(' no secret key');
             }
         }
     }, [userToken, SecretKey])

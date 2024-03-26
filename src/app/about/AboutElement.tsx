@@ -35,8 +35,6 @@ export default function AboutElement() {
             if (data) {
                 SetPhoto(data[0].photo);
                 SetAbout(data[0].about);
-            } else {
-                console.log(data.error, data.error.message)
             }
             setLoading(false);
 
@@ -60,8 +58,6 @@ export default function AboutElement() {
                 if (userToken === accessToken) {
                     setAccess(true)
                 }
-            } else {
-                console.log(' no secret key');
             }
         }
     }, [userToken, SecretKey])

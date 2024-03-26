@@ -32,7 +32,6 @@ export default function Projectcard({ title, description, tech, website, github,
         })
         const data = await response.json()
         if (data.status === 'success') return;
-        if (data.status === 'error') console.log(data.error.message);
 
     }
 
@@ -67,8 +66,6 @@ export default function Projectcard({ title, description, tech, website, github,
                 if (userToken === accessToken) {
                     setAccess(true)
                 }
-            } else {
-                console.log(' no secret key');
             }
         }
     }, [userToken, SecretKey])
