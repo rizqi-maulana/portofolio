@@ -9,9 +9,6 @@ export const metadata: Metadata = {
     default: "Maulanya",
     template: '%s | Maulanya',
   },
-  icons: {
-    icon: '../assets/icon/icon.ico'
-  }
 };
 
 export default function RootLayout({
