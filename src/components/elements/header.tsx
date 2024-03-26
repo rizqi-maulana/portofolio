@@ -59,16 +59,6 @@ export default function Header() {
                 console.log(data.error, data.error.message)
             }
         }
-        const verifytoken = async () => {
-            const resposetoken = await fetch('/api/verify-token', {
-                method: "GET",
-            })
-            const data = await resposetoken.json()
-            console.log(data);
-
-        }
-        GetUserDetails()
-        verifytoken()
     }, [])
 
     useEffect(() => {

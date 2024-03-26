@@ -6,26 +6,11 @@ import { GetPassword } from '@/providers/getPasswords';
 
 export const metadata: Metadata = {
   title: {
-    default: "Rizqi Maulana | Maulanya",
+    default: "Maulanya",
     template: '%s | Maulanya',
   },
   icons: {
     icon: '../assets/icon/icon.ico'
-  },
-  description: "Hi, I'm Rizqi Maulana or often called Maulana and I'm a web developer, this is my portfolio, explaining my area of ​​expertise and what projects I've created.",
-  keywords: 'Rizqi Maulana Portofolio Maulanya',
-  openGraph: {
-    title: 'Rizqi Maulana Portofolio',
-    description: "Hi, I'm Rizqi Maulana or often called Maulana and I'm a web developer, this is my portfolio, explaining my area of ​​expertise and what projects I've created.",
-    url: 'https://maulanya.com',
-    siteName: 'Maulanya',
-    images: [
-      {
-        url: 'https://discord.com/channels/887719589914501150/887719589914501153/1206814875305779230',
-        width: 1200,
-        height: 630
-      }
-    ]
   }
 };
 
