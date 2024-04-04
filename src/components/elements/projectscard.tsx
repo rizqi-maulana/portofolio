@@ -72,9 +72,9 @@ export default function Projectcard({ title, description, tech, website, github,
 
     return (
         <>
-            {/* {
+            {
                 ShowUpdate && <UpdateProject closeModal={SetShowUpdate} />
-            } */}
+            }
             <div className="w-[95%] h-max md:w-[500px] md:h-max bg-[#151527] rounded-[5px] relative flex items-center flex-col md:mx-10 md:mt-60 mt-28">
                 <Image
                     src={thumb}
@@ -106,8 +106,8 @@ export default function Projectcard({ title, description, tech, website, github,
                             }
                         </div>
                         <div className="flex absolute bottom-2 flex-wrap">
-                            <a href={github} className={clsx('flex mr-3', { 'hidden mr-0': github === null })} target="_blank" rel="noopener noreferrer"><FaGithub /> <p className='ml-2 md:text-sm text-[10px]'>Repository</p></a>
-                            <a href={website} className={clsx('flex', { 'hidden': website === null })} target="_blank" rel="noopener noreferrer"> <MdOpenInNew /> <p className='ml-2 md:text-sm text-[10px]'>Visit</p></a>
+                            <a href={github} className={clsx('flex mr-3', { 'hidden mr-0': github === 'null' })} target="_blank" rel="noopener noreferrer"><FaGithub /> <p className='ml-2 md:text-sm text-[10px]'>Repository</p></a>
+                            <a href={website} className={clsx('flex', { 'hidden': website === 'null' })} target="_blank" rel="noopener noreferrer"> <MdOpenInNew /> <p className='ml-2 md:text-sm text-[10px]'>Visit</p></a>
 
                             {
                                 access && (

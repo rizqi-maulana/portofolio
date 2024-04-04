@@ -90,8 +90,6 @@ export default function UpdateProject({ closeModal }: any) {
 
     const HandleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-
         setUploaded(true)
         if (SelectedFile) {
             const Uuid = uuidv4()
@@ -178,7 +176,7 @@ export default function UpdateProject({ closeModal }: any) {
 
                     <div className="my-5 w-max mx-auto">
                         <label htmlFor="Image" className="border-2 border-white rounded-[5px] p-3 flex items-center"><LuImagePlus className="mr-2 w-5 h-5" />Upload Image</label>
-                        <input type="file" name="" required id="Image" accept="image/*" hidden onChange={handleImageUpload} />
+                        <input type="file" name="Image" id="Image" accept="image/*" hidden onChange={handleImageUpload} />
                     </div>
 
                     {
@@ -269,7 +267,7 @@ export default function UpdateProject({ closeModal }: any) {
                                     speed="1.75"
                                     color="white"
                                 ></l-line-wobble> :
-                                <button type="submit" className="flex items-center bg-[#0D0D18] px-3 py-2 rounded-[5px] w-max mt-2"><RiUploadCloud2Fill className="mr-2" /> Upload Project</button>
+                                <button type="submit" className="flex items-center bg-[#0D0D18] px-3 py-2 rounded-[5px] w-max mt-2"><RiUploadCloud2Fill className="mr-2" /> Update Project</button>
                         }
 
                     </div>

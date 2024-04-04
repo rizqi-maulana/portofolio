@@ -1,9 +1,10 @@
 import { createClient } from "@/utils/supabase/client"
+import { revalidateTag } from "next/cache"
 import { NextResponse } from "next/server"
 
 const supabase = createClient()
 export const GET = async () => {
-
+    revalidateTag('/about')
     const { data, error } = await supabase
         .from('myskills')
         .select()

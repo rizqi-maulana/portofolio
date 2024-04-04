@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={`${poppins.className} container mx-auto`}>
         <GetPassword>
           {children}
         </GetPassword>
