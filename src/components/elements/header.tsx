@@ -53,10 +53,12 @@ export default function Header() {
             })
             const data = await response.json()
             if (data) {
+
                 SetPhoto(data[0].photo);
 
             }
         }
+        GetUserDetails()
     }, [])
 
     useEffect(() => {
@@ -102,7 +104,7 @@ export default function Header() {
                                     alt="profile"
                                     width={30}
                                     height={30}
-                                    className="w-[30px] h-[30px] rounded-full"
+                                    className="w-[30px] h-[30px] rounded-full object-cover"
                                 ></Image>
                             </button>
                         }
