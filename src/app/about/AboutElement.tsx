@@ -120,7 +120,7 @@ export default function AboutElement() {
 
                 </div>
                 <div className="h-[1px] mt-8 bg-[#919191]" />
-                <div className="block lg::flex mt-3 md:justify-between w-full">
+                <div className="block lg:flex mt-3 lg:justify-between w-full">
                     <section>
 
                         <div className="flex mt-5">
