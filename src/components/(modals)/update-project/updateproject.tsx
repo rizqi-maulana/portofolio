@@ -98,7 +98,7 @@ export default function UpdateProject({ closeModal }: any) {
             formdata.append("Image", SelectedFile)
             formdata.append("FileName", FileName)
             const response = await fetch('/api/upload-image', {
-                method: 'POST',
+                method: 'PATCH',
                 body: formdata
             });
             const data = await response.json();
@@ -157,7 +157,7 @@ export default function UpdateProject({ closeModal }: any) {
         formdata.append('id', id)
 
         fetch('/api/update-project', {
-            method: 'POST',
+            method: 'PATCH',
             body: formdata
 
         })
@@ -169,7 +169,7 @@ export default function UpdateProject({ closeModal }: any) {
 
     }
     return (
-        <div className="w-full h-full fixed absolute flex items-center justify-center flex-col z-[1003] bg-[#0D0D18]/40 top-0 left-0" ref={outside}>
+        <div className="w-full h-full fixed flex items-center justify-center flex-col z-[1003] bg-[#0D0D18]/40 top-0 left-0" ref={outside}>
 
             <form onSubmit={HandleSubmit} className="px-5 py-3 rounded-[5px] bg-[#151527] w-[300px] animate__animated animate__bounceIn">
                 <div>

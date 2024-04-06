@@ -1,6 +1,6 @@
 import { createClient } from "@/utils/supabase/client";
 import { NextRequest, NextResponse } from "next/server"
-export const POST = async (request: NextRequest) => {
+export const PUT = async (request: NextRequest) => {
     const supabase = createClient();
     const objUpdate = await request.json();
     const { data, error } = await supabase

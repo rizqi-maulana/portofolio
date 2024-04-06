@@ -27,7 +27,7 @@ export default function Projectcard({ title, description, tech, website, github,
         const formdata = new FormData()
         formdata.append('id', id)
         const response = await fetch('/api/delete-project', {
-            method: "POST",
+            method: "DELETE",
             body: formdata
         })
         const data = await response.json()

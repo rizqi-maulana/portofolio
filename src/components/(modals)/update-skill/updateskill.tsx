@@ -69,7 +69,7 @@ export default function UpdateSkill({ closeModal }: any) {
         const formdata = new FormData()
         formdata.append('skills', JSON.stringify(MySkills.map((data: any) => data)))
         await fetch('/api/update-skill', {
-            method: "POST",
+            method: "PATCH",
             body: formdata
         })
         closeModal(false)

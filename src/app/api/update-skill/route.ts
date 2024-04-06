@@ -1,7 +1,7 @@
 import { createClient } from "@/utils/supabase/client";
 import { NextResponse, NextRequest } from "next/server";
 
-export const POST = async (request: NextRequest) => {
+export const PATCH = async (request: NextRequest) => {
     const supabase = createClient();
     const formdata = await request.formData();
 

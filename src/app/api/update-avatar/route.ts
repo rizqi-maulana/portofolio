@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/utils/supabase/client";
 
-export const POST = async (request: NextRequest) => {
+export const PATCH = async (request: NextRequest) => {
     const supabase = createClient()
     const formdata = await request.formData()
     const File: File = formdata.get('File') as unknown as File

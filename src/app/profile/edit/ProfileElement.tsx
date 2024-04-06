@@ -106,7 +106,7 @@ export default function ProfileElement() {
                 formdata.append('File', SelectedFile)
                 formdata.append('FileName', FileName)
                 const response = await fetch('/api/update-avatar', {
-                    method: "POST",
+                    method: "PATCH",
                     body: formdata
                 })
                 const data = await response.json()
@@ -125,7 +125,7 @@ export default function ProfileElement() {
     const UpdateDataUser = async (publicUrl?: string) => {
 
         const response = await fetch('/api/update-user', {
-            method: "POST",
+            method: "PUT",
             body: JSON.stringify({
                 display_name: DisplayName,
                 username: Username,

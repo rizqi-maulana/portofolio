@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/utils/supabase/client";
 
-export const POST = async (request: NextRequest) => {
+export const DELETE = async (request: NextRequest) => {
     const formdata = await request.formData()
     const supabase = createClient()
     const id = formdata.get('id')

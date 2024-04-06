@@ -58,7 +58,7 @@ export default function UploadProject({ closeModal }: any) {
             formdata.append("Image", SelectedFile)
             formdata.append("FileName", FileName)
             const response = await fetch('/api/upload-image', {
-                method: 'POST',
+                method: 'PATCH',
                 body: formdata
             });
             const data = await response.json();
