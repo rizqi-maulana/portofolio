@@ -69,9 +69,9 @@ export default function AboutElement() {
             }
             {ShowUpdateSkill && <UpdateSkill closeModal={SetShowUpdateSkill} />}
             <Header />
-            <section className="md:px-56 px-8">
+            <section className="md:px-10 lg:px-56 px-8">
 
-                <div className="md:flex block">
+                <div className="lg:flex block">
 
 
                     <section>
@@ -88,7 +88,7 @@ export default function AboutElement() {
 
                     </section>
 
-                    <div className="block md:ml-20">
+                    <div className="block lg:ml-20">
 
                         <section>
                             <div className="flex mt-10">
@@ -120,7 +120,7 @@ export default function AboutElement() {
 
                 </div>
                 <div className="h-[1px] mt-8 bg-[#919191]" />
-                <div className="block md:flex mt-3 md:justify-between w-full">
+                <div className="block lg::flex mt-3 md:justify-between w-full">
                     <section>
 
                         <div className="flex mt-5">

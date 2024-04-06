@@ -34,7 +34,7 @@ export const Skillcontainer = () => {
     }, [])
 
     return (
-        <div className="mt-2 md:w-[800px]">
+        <div className="mt-2 lg:w-[800px]">
             {loading ? (
                 <l-cardio
                     size="45"
