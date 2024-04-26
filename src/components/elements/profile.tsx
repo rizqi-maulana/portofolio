@@ -9,7 +9,7 @@ import { BsTelegram } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import Loading from "@/app/loading";
 import Link from "next/link";
-
+import ProfileImg from '@/assets/image/profile.jpg'
 
 
 export default function Profile() {
@@ -84,12 +84,11 @@ export default function Profile() {
             }
             <div className="flex md:items-center">
                 <Image
-                    src={Photo}
+                    src={Photo || ProfileImg}
                     className="rounded-full md:w-[300px] md:h-[300px] w-[100px] h-[100px] object-cover"
                     width={100}
                     height={100}
                     alt="Picture of the author"
-                    priority
                 />
                 <div className="md:ml-10 ml-5">
                     <div className="flex">
@@ -99,8 +98,7 @@ export default function Profile() {
                             className="md:w-[25px] md:h-[25px] w-[15px] h-[15px]"
                             width={15}
                             height={15}
-                            alt="Picture of the author"
-                            priority
+                            alt="Verify"
 
                         />
                     </div>

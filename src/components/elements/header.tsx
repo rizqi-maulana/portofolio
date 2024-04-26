@@ -11,6 +11,7 @@ import { fetchData } from "@/app/api/fetch-token/fetchdata";
 import CryptoJS from "crypto-js";
 import AccountMenu from "./accountmenu";
 import Image from "next/image";
+import ProfileImg from "@/assets/image/profile.jpg";
 export default function Header() {
 
     const [ShowMobileNav, SetShowMobileNav] = useState(false)
@@ -100,7 +101,7 @@ export default function Header() {
                             access &&
                             <button onClick={() => SetShowAccMenu(!ShowAccMenu)} className="w-[30px] h-[30px] rounded-full">
                                 <Image
-                                    src={Photo}
+                                    src={Photo || ProfileImg}
                                     alt="profile"
                                     width={30}
                                     height={30}

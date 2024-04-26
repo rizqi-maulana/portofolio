@@ -82,7 +82,7 @@ export default function Projectcard({ title, description, tech, website, github,
                     width={150}
                     height={150}
                     alt="Project Image"
-                    priority
+                    priority={true}
                 />
                 <div className='p-2 md:p-4 pt-16 md:pt-24 h-[210px] md:h-[280px] flex w-full'>
                     <div className='px-2'>
@@ -98,7 +98,7 @@ export default function Projectcard({ title, description, tech, website, github,
                                         width={15}
                                         height={15}
                                         alt="Tech Stack"
-                                        priority
+                                        priority={true}
                                     />
 
 

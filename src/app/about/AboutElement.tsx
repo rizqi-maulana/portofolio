@@ -15,6 +15,7 @@ import { fetchData } from "../api/fetch-token/fetchdata";
 import ShortTrip from "@/components/elements/shorttrip";
 import CryptoJS from "crypto-js";
 import { RiWechatChannelsLine } from "react-icons/ri";
+import Profile from '@/assets/image/profile.jpg'
 
 export default function AboutElement() {
     const [About, SetAbout] = useState<string>('')
@@ -77,12 +78,11 @@ export default function AboutElement() {
                     <section>
                         <div className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] border-2 border-white rounded-xl md:mt-20 mt-10 mx-auto relative bg-[#151527]">
                             <Image
-                                src={Photo}
+                                src={Photo || Profile}
                                 className="rounded-xl w-[240px] h-[240px] md:w-[300px] md:h-[300px] absolute md:left-[-40px] md:top-[-40px] left-[-20px] top-[-20px] object-cover"
                                 width={250}
                                 height={250}
                                 alt="Picture of the author"
-                                priority
                             />
                         </div>
 

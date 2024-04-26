@@ -64,7 +64,6 @@ export default function MobileVavbar() {
     return (
         <>
             {
-                ShowLoading && <Loading />
             }
             <div className="bg-[#151527] w-[150px] h-max right-7 rounded-[5px] absolute z-[999] text-[14px] p-3">
                 <button onClick={() => handleClick('/')} className={clsx('flex mt-3', {
