@@ -11,7 +11,7 @@ export default function Loading() {
         getLoader()
     }, [])
     return (
-        <div className="fixed inset-0 h-screen w-screen flex items-center justify-center bg-[#0D0D18]/50 z-[1000]">
+        <div className="fixed inset-0 h-screen w-screen flex items-center justify-center bg-[#0D0D18] z-[1000]">
             <div className='flex flex-col items-center'>
                 <l-ping
                     size="45"

@@ -12,7 +12,9 @@ export default function page() {
 }
 
 export async function generateMetadata({ params }: DetailsType): Promise<Metadata> {
+  const decodeurl = decodeURIComponent(`${params.detailsid}`)
   return {
-    title: decodeURIComponent(`${params.detailsid}`),
+    title: decodeURIComponent(`${decodeurl}`),
+    description: `project details from ${decodeurl}, explanation of the project, techstack and further information regarding the project.`,
   };
 }
