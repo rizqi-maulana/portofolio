@@ -33,7 +33,6 @@ export default function Header() {
         SetShowLoading(true)
         setTimeout(() => {
             router.push(e)
-
         }, 500);
         if (pathname === e) {
             SetShowLoading(false)

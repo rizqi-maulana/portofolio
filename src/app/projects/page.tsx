@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { ProjectsElement } from "./ProjectsElement";
+import { ProjectsElement } from "../../components/template/project/ProjectsElement";
 
 export const metadata: Metadata = {
     title: 'Projects',

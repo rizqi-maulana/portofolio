@@ -1,12 +1,11 @@
 'use client'
 
-import Header from "@/components/elements/header"
-import Projectcard from "@/components/elements/projectscard"
-import { RiUploadCloud2Fill } from "react-icons/ri";
 import UploadProject from "@/components/(modals)/upload-project/uploadproject"
+import { UploadProjectBtn } from "@/components/Organism/project/UploadProjectBtn"
 import { useState, useEffect } from "react"
-import { fetchData } from "../api/fetch-token/fetchdata";
+import { fetchData } from "../../../app/api/fetch-token/fetchdata";
 import CryptoJS from "crypto-js";
+import ProjectShow from "@/components/Organism/project/ProjectShow"
 
 export const ProjectsElement = () => {
     const [ShowUploadProject, SetUploadProject] = useState(false)
@@ -63,36 +62,14 @@ export const ProjectsElement = () => {
     }, [userToken, SecretKey])
     return (
         <>
-            <Header />
 
-            {/* start error disini */}
             {
                 ShowUploadProject && <UploadProject closeModal={SetUploadProject} />
             }
-            {/* end error disini */}
 
-            {
-                access &&
-                <button onClick={() => SetUploadProject(true)} className="mx-auto flex mt-5 items-center bg-[#151527] px-3 py-2 rounded-[5px]"><RiUploadCloud2Fill className="mr-2" /> Upload Project</button>
-            }
-            <section className='px-3 flex flex-col items-center md:px-10 md:flex-wrap md:grid md:grid-cols-2 md:w-max md:mx-auto'>
+            <UploadProjectBtn access={access} SetUploadProject={SetUploadProject} />
 
-                {
-
-                    // loading ? (
-                    // <l-cardio
-                    //     size="45"
-                    //     speed="2"
-                    //     color="white"
-                    // ></l-cardio>
-                    // ) :
-                    Projects.map((ProjectData: any) => (
-                        <Projectcard key={ProjectData.id} id={ProjectData.id} title={ProjectData.title} description={ProjectData.description} tech={ProjectData.techstack[0].TechStack.map((data: any) => data)} website={ProjectData.website} github={ProjectData.github} thumb={ProjectData.thumb} />
-                    ))
-
-                }
-
-            </section>
+            <ProjectShow Projects={Projects} />
         </>
     )
 }

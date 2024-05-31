@@ -210,6 +210,16 @@ export default function UploadProject({ closeModal }: any) {
                                 <span className="text-[12px]">Supabase</span>
                             </label>
                         </div>
+                        <div>
+                            <label className="flex items-center">
+                                <input type="checkbox" name="Bun" id="Bun" className="tech_check mr-2" onChange={handleCheckboxChange} />
+                                <span className="text-[12px]">Bun</span>
+                            </label>
+                            <label className="flex items-center">
+                                <input type="checkbox" name="Markdown" id="Markdown" className="tech_check mr-2" onChange={handleCheckboxChange} />
+                                <span className="text-[12px]">Markdown</span>
+                            </label>
+                        </div>
                     </div>
                     <label htmlFor="Repository" className="font-bold text-sm">Repository Link:</label>
                     <input type="text" id='Repository' autoComplete="off" placeholder="Repository Link" className='w-full h-[35px] border-2 border-white rounded-[8px] mt-1 mb-2 bg-transparent text-[11px] px-2' onChange={(e) => setGithub(e.target.value)} />

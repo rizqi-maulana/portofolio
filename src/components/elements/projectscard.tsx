@@ -11,6 +11,7 @@ import { useSearchParams } from 'next/navigation';
 import clsx from 'clsx';
 import { fetchData } from '@/app/api/fetch-token/fetchdata';
 import CryptoJS from 'crypto-js';
+import { TbListDetails } from "react-icons/tb";
 
 interface ProjectData {
     title: string, description: string, tech: Array<any>, website: string, github: string, thumb: string, id: string,
@@ -105,15 +106,15 @@ export default function Projectcard({ title, description, tech, website, github,
                                 ))
                             }
                         </div>
-                        <div className="flex absolute bottom-2 flex-wrap">
-                            <a href={github} className={clsx('flex mr-3', { 'hidden mr-0': github === 'null' })} target="_blank" rel="noopener noreferrer"><FaGithub /> <p className='ml-2 md:text-sm text-[10px]'>Repository</p></a>
-                            <a href={website} className={clsx('flex', { 'hidden': website === 'null' })} target="_blank" rel="noopener noreferrer"> <MdOpenInNew /> <p className='ml-2 md:text-sm text-[10px]'>Visit</p></a>
-
+                        <div className="flex absolute bottom-2 gap-2 flex-wrap">
+                            <a href={github} className={clsx('flex items-center', { 'hidden mr-0': github === 'null' })} target="_blank" rel="noopener noreferrer"><FaGithub className='mr-1' /> <p className='md:text-sm text-[10px]'>Repository</p></a>
+                            <a href={website} className={clsx('flex items-center', { 'hidden': website === 'null' })} target="_blank" rel="noopener noreferrer"> <MdOpenInNew className='mr-1' /> <p className='md:text-sm text-[10px]'>Visit</p></a>
+                            <Link href={`projects/details/${title}`} className='flex items-center'><TbListDetails className='mr-1' /> <p className='md:text-sm text-[10px]'>Details</p></Link>
                             {
                                 access && (
                                     <>
-                                        <Link href={`?id=${id}`} onClick={() => ShowUpdateForm()} className='flex'> <FaEdit className='ml-3' /> <p className='ml-2 md:text-sm text-[10px]'>Update</p></Link>
-                                        <button className='flex text-red-400' onClick={() => HandleDelete(id)}> <MdDelete className='ml-3' /> <p className='ml-2 md:text-sm text-[10px]'>Delete</p></button>
+                                        <Link href={`?id=${id}`} onClick={() => ShowUpdateForm()} className='flex'> <FaEdit className='mr-1' /> <p className='md:text-sm text-[10px]'>Update</p></Link>
+                                        <button className='flex text-red-400' onClick={() => HandleDelete(id)}> <MdDelete className='mr-1' /> <p className='md:text-sm text-[10px]'>Delete</p></button>
                                     </>
                                 )
                             }

@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import LoginElement from "./LoginElement";
+import LoginElement from "../../../components/template/login/LoginElement";
 
 export const metadata: Metadata = {
     title: "Login"

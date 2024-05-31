@@ -39,6 +39,8 @@ const config: Config = {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         mobilenav: "mobilenav 1s ease-out .5s forwards",
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+        shimmer: "shimmer 8s infinite",
       },
       keyframes: {
         scroll: {
@@ -50,7 +52,19 @@ const config: Config = {
           "0%": { marginLeft: "0" },
           "30%, 100%": { marginLeft: "10px" },
         },
-
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
+        },
+        shimmer: {
+          "0%, 90%, 100%": {
+            "background-position": "calc(-100% - var(--shimmer-width)) 0",
+          },
+          "30%, 60%": {
+            "background-position": "calc(100% + var(--shimmer-width)) 0",
+          },
+        },
       },
     },
   },

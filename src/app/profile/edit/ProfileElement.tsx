@@ -180,7 +180,6 @@ export default function ProfileElement() {
 
             {
                 access && <div>
-                    <Header />
                     <form onSubmit={UpdateUser} className='mt-5 md:px-56 px-8 pb-5 md:flex'>
                         <div>
                             <Image

@@ -80,7 +80,7 @@ export const Skillcard = ({
             <ul
                 ref={scrollerRef}
                 className={cn(
-                    " flex min-w-full shrink-0 gap-4 py-2 w-max flex-nowrap",
+                    " flex w-full  shrink-0 gap-4 py-2 flex-nowrap",
                     start && "animate-scroll ",
                     pauseOnHover && "hover:[animation-play-state:paused]"
                 )}

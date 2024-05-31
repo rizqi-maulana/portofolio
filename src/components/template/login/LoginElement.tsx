@@ -1,10 +1,10 @@
 "use client"
 
-import { ChangeEvent, FormEvent, useEffect, useState, useRef } from "react"
+import { ChangeEvent, FormEvent, useEffect, useState, useRef, useMemo } from "react"
 import CryptoJS from "crypto-js"
 import ErrorCard from "@/components/elements/errorcard"
 import { useRouter } from "next/navigation"
-import { fetchData } from "../../api/fetch-token/fetchdata"
+import { fetchData } from "../../../app/api/fetch-token/fetchdata"
 import SuccessCard from "@/components/elements/successcard"
 
 export default function LoginElement() {
@@ -21,7 +21,7 @@ export default function LoginElement() {
     const PasswordKey = process.env.NEXT_PUBLIC_PASSWORD_KEY
     const SecretKey = process.env.NEXT_PUBLIC_SECRET_KEY
 
-    useEffect(() => {
+    useMemo(() => {
 
         fetchData()
             .then(data => {

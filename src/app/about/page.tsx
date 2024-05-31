@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import AboutElement from "./AboutElement";
+import AboutElement from "../../components/template/about/AboutElement";
 
 export const metadata: Metadata = {
     title: 'About',

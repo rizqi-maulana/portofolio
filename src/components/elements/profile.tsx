@@ -6,7 +6,7 @@ import { BsInstagram } from "react-icons/bs";
 import { FaDiscord } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { BsTelegram } from "react-icons/bs";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Loading from "@/app/loading";
 import Link from "next/link";
 import ProfileImg from '@/assets/image/profile.jpg'
@@ -59,7 +59,7 @@ export default function Profile() {
         }
         execute()
     }, [])
-    useEffect(() => {
+    useMemo(() => {
         Media.forEach((data: any) => {
             if (data.name === 'instagram') {
                 setInstagram(data.link)
@@ -89,6 +89,7 @@ export default function Profile() {
                     width={100}
                     height={100}
                     alt="Picture of the author"
+                    sizes="100vw"
                 />
                 <div className="md:ml-10 ml-5">
                     <div className="flex">

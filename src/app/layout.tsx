@@ -1,6 +1,7 @@
 import 'animate.css';
 import "@globals";
 import { poppins } from "@/assets/fonts/fonts";
+import Header from '@/components/elements/header';
 import { Metadata } from "next";
 import { GetPassword } from '@/providers/getPasswords';
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
+        <Header />
         <GetPassword>
           {children}
         </GetPassword>

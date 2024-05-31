@@ -140,6 +140,16 @@ export default function UpdateSkill({ closeModal }: any) {
                                 <span className="text-[12px]">Supabase</span>
                             </label>
                         </div>
+                        <div>
+                            <label className="flex items-center">
+                                <input type="checkbox" name="Bun" id="Bun" className="tech_check mr-2" onChange={handleCheckboxChange} />
+                                <span className="text-[12px]">Bun</span>
+                            </label>
+                            <label className="flex items-center">
+                                <input type="checkbox" name="Markdown" id="Markdown" className="tech_check mr-2" onChange={handleCheckboxChange} />
+                                <span className="text-[12px]">Markdown</span>
+                            </label>
+                        </div>
                     </div>
                     <button className="flex items-center bg-[#0D0D18] px-3 py-2 rounded-[5px] mt-2"><FaRocket className="mr-2" /> Update Skill</button>
 
