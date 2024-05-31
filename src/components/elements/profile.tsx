@@ -48,6 +48,7 @@ export default function Profile() {
         if (data) {
             SetMedia(data);
         }
+        setLoading(false);
     }
 
 
@@ -55,7 +56,6 @@ export default function Profile() {
         const execute = async () => {
             await GetUserDetails()
             fetchSocialMedia()
-            setLoading(false);
         }
         execute()
     }, [])

@@ -71,7 +71,7 @@ export default function ProjectDetails() {
                 <Notification color="#1E86FF" />
               </AnimatedList>
             }
-            <div className="lg:flex justify-between block ">
+            <div className="flex lg:justify-between lg:flex-row flex-col justify-center items-center">
               <div>
                 {
                   ProjectImage &&
@@ -79,8 +79,8 @@ export default function ProjectDetails() {
                 }
               </div>
               <div className="lg:w-[80%] w-full">
-                <h1 className="text-3xl font-bold mb-3">{ProjectTitle}</h1>
-                <p>{ProjectDesc}</p>
+                <h1 className="lg:text-3xl text-xl font-bold mt-3 lg:mt-0 mb-3">{ProjectTitle}</h1>
+                <p className="lg:text-base text-sm">{ProjectDesc}</p>
                 <div />
                 <div className="mt-10 lg:flex block justify-between">
                   <div>
