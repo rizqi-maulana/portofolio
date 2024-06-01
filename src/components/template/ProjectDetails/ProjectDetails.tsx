@@ -64,7 +64,7 @@ export default function ProjectDetails() {
     <>
       {
         DataFound ? (
-          <section className="lg:px-56 px-3 mt-10">
+          <section className="xl:px-56 lg:px-20 px-3 mt-10">
             {
               ShowNotif &&
               <AnimatedList>
@@ -75,7 +75,7 @@ export default function ProjectDetails() {
               <div>
                 {
                   ProjectImage &&
-                  <Image src={ProjectImage!} className="w-[200px] h-[200px] rounded-2xl" width={200} height={200} sizes="(100vw)" alt={ProjectTitle} />
+                  <Image src={ProjectImage!} className="w-[200px] h-[200px] rounded-2xl mr-10" width={200} height={200} sizes="(100vw)" alt={ProjectTitle} />
                 }
               </div>
               <div className="lg:w-[80%] w-full">
