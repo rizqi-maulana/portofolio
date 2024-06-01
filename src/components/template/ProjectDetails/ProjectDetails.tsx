@@ -85,7 +85,7 @@ export default function ProjectDetails() {
                 <div className="mt-10 lg:flex block justify-between">
                   <div>
                     <h3 className="mb-3 font-semibold">Tech Stack:</h3>
-                    <div className="flex bg-slate-900 p-5 rounded-xl w-full lg:w-[500px]">
+                    <div className="flex bg-slate-900 gap-1 p-5 rounded-xl w-full lg:w-[500px]">
                       <AnimatedTooltip items={ProjectTech} />
 
                     </div>
