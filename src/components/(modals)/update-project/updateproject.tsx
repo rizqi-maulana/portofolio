@@ -15,8 +15,8 @@ export default function UpdateProject({ closeModal }: any) {
     const outside = useRef(null)
     const [Title, setTitle] = useState<string>('');
     const [Description, setDescription] = useState<string>('');
-    const [Website, setWebsite] = useState<string>('');
-    const [Github, setGithub] = useState<string>('');
+    const [Website, setWebsite] = useState<string>('null');
+    const [Github, setGithub] = useState<string>('null');
     const [SelectedImage, setSelectedImage] = useState<string>('');
     const [SelectedFile, setSelectedFile] = useState<File | undefined>()
     const [Uploaded, setUploaded] = useState<boolean>(false)

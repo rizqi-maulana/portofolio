@@ -188,7 +188,7 @@ export default function ProfileElement() {
                                 width={100}
                                 height={100}
                                 alt="Picture of the author"
-                                priority={true}
+                                sizes="(100vw)"
                             />
                             <label htmlFor="picture" className='cursor-pointer text-[12px] text-[#1572B6] block text-center'>Change Picture</label>
                             <button type='button' className='bg-[#151527] px-3 py-2 rounded-[5px] mt-5 items-center hidden md:flex' onClick={() => ChangeToken()} ><FaKey className='mr-1' /> Reset Token</button>
