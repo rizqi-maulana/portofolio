@@ -95,11 +95,11 @@ export default function Projectcard({ title, description, tech, website, github,
                                     <Image
                                         key={`${tech.tech}${Math.random()}`}
                                         src={tech.icon}
-                                        className='md:w-[25px] md:h-[25px] mr-1 md:mr-1 w-[15px] h-[15px]'
+                                        className='md:w-[25px] md:h-[25px] mr-1 md:mr-1 w-[15px] h-[15px] object-cover'
                                         width={15}
                                         height={15}
                                         alt="Tech Stack"
-                                        priority={true}
+                                        sizes='100vw'
                                     />
 
 

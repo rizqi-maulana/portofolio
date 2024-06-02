@@ -71,11 +71,11 @@ export default function ProjectDetails() {
                 <Notification color="#1E86FF" />
               </AnimatedList>
             }
-            <div className="flex lg:justify-between lg:flex-row flex-col justify-center items-center">
+            <div className="flex lg:justify-between flex-col justify-center items-center">
               <div>
                 {
                   ProjectImage &&
-                  <Image src={ProjectImage!} className="w-[200px] h-[200px] rounded-2xl mr-10" width={200} height={200} sizes="(100vw)" alt={ProjectTitle} />
+                  <Image src={ProjectImage!} className="w-full h-[350px] mb-10 rounded-2xl mr-10" width={200} height={200} sizes="(100vw)" alt={ProjectTitle} />
                 }
               </div>
               <div className="lg:w-[80%] w-full">
