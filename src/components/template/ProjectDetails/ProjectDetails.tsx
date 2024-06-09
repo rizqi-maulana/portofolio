@@ -11,8 +11,7 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { MdOpenInNew } from "react-icons/md"
 import { FaShareAlt } from "react-icons/fa";
 import AnimatedShinyButton from "@/components/elements/animated-shiny-button"
-import { AnimatedList } from "@/components/elements/animated-list"
-import { Notification } from "@/components/elements/Notification"
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function ProjectDetails() {
   const { detailsid } = useParams()
@@ -24,7 +23,6 @@ export default function ProjectDetails() {
   const [ProjectLink, setProjectLink] = useState<string>('')
   const decodeDetailsid = decodeURIComponent(`${detailsid}`)
   const [DataFound, setDataFound] = useState<boolean>(true)
-  const [ShowNotif, setShowNotif] = useState<boolean>(false)
   useEffect(() => {
     const fetchProject = async () => {
       const formdata = new FormData()
@@ -50,34 +48,23 @@ export default function ProjectDetails() {
   }, [])
 
   const HandleCopied = useCallback(() => {
-    setShowNotif(true)
+    toast.success("Link copied to clipboard", {
+      position: "top-center"
+    });
     navigator.clipboard.writeText(`https://maulanya.com/projects/details/${detailsid}`)
   }, [])
-
-  useEffect(() => {
-    setTimeout(() => {
-      setShowNotif(false)
-    }, 2000);
-  }, [ShowNotif])
 
   return (
     <>
       {
         DataFound ? (
           <section className="xl:px-56 lg:px-20 px-3 mt-10">
-            {
-              ShowNotif &&
-              <AnimatedList>
-                <Notification color="#1E86FF" />
-              </AnimatedList>
-            }
+            <ToastContainer />
             <div className="flex lg:justify-between flex-col justify-center items-center">
-              <div>
-                {
-                  ProjectImage &&
-                  <Image src={ProjectImage!} className="w-full h-[350px] mb-10 rounded-2xl mr-10" width={200} height={200} sizes="(100vw)" alt={ProjectTitle} />
-                }
-              </div>
+              {
+                ProjectImage &&
+                <Image src={ProjectImage!} className="w-max lg:h-[350px] h-[200px] mb-10 rounded-2xl" width={200} height={200} sizes="100vw" alt={ProjectTitle} />
+              }
               <div className="lg:w-[80%] w-full">
                 <h1 className="lg:text-3xl text-xl font-bold mt-3 lg:mt-0 mb-3">{ProjectTitle}</h1>
                 <p className="lg:text-base text-sm">{ProjectDesc}</p>

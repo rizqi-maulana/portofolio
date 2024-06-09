@@ -84,6 +84,7 @@ export default function Projectcard({ title, description, tech, website, github,
                     height={150}
                     alt="Project Image"
                     priority={true}
+                    sizes='100vw'
                 />
                 <div className='p-2 md:p-4 pt-16 md:pt-24 h-[210px] md:h-[280px] flex w-full'>
                     <div className='px-2'>

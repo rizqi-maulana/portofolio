@@ -1,6 +1,7 @@
 import 'animate.css';
 import "@globals";
 import { poppins } from "@/assets/fonts/fonts";
+import 'react-toastify/dist/ReactToastify.css';
 import Header from '@/components/elements/header';
 import { Metadata } from "next";
 import { GetPassword } from '@/providers/getPasswords';
