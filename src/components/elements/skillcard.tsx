@@ -37,7 +37,7 @@ export const Skillcard = ({
     useEffect(() => {
         function addAnimation() {
             if (containerRef.current && scrollerRef.current) {
-                containerRef.current.style.setProperty("--animation-duration", "40s");
+                containerRef.current.style.setProperty("--animation-duration", "20s");
                 // const scrollerContent = Array.from(scrollerRef.current.children);
 
                 // Duplicate Item
@@ -80,8 +80,8 @@ export const Skillcard = ({
             <ul
                 ref={scrollerRef}
                 className={cn(
-                    " flex w-full  shrink-0 gap-4 py-2 flex-nowrap",
-                    start && "animate-scroll ",
+                    " flex w-max shrink-0 gap-4 py-2 px-7 md:px-10 flex-nowrap",
+                    start && "animate-scroll",
                     pauseOnHover && "hover:[animation-play-state:paused]"
                 )}
             >

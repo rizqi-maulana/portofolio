@@ -37,7 +37,7 @@ const config: Config = {
       },
       animation: {
         scroll:
-          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+          "scroll var(--animation-duration, 20s) var(--animation-direction, forwards) linear infinite",
         mobilenav: "mobilenav 1s ease-out .5s forwards",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         shimmer: "shimmer 8s infinite",

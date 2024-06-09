@@ -76,7 +76,7 @@ export default function Projectcard({ title, description, tech, website, github,
             {
                 ShowUpdate && <UpdateProject closeModal={SetShowUpdate} />
             }
-            <div className="w-[95%] h-max md:w-[500px] md:h-max bg-[#151527] rounded-[5px] relative flex items-center flex-col md:mx-10 md:mt-60 mt-28">
+            <div className="w-[95%] h-max md:w-[500px] md:h-max bg-[#151527] rounded-[5px] relative flex items-center flex-col md:mx-10 md:mt-60 mt-36">
                 <Image
                     src={thumb}
                     className="w-max h-[150px] md:w-max md:h-[280px] object-cover absolute md:top-[-200px] top-[-100px] rounded-[5px]"
