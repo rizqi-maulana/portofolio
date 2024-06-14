@@ -44,7 +44,6 @@ export default function AboutElement() {
                 SetAbout(data[0].about);
             }
             setLoading(false);
-
         }
         GetUserDetails()
         fetchData()
