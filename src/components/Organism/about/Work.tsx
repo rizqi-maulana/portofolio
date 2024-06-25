@@ -11,7 +11,7 @@ export const Work = () => {
       </div>
       {
         experince.map((data: any, id: number) => (
-          <Experience Company={data.Company} Location={data.Location} Date={data.Date} ExpeImage={data.Image} />
+          <Experience key={id} Company={data.Company} Location={data.Location} Date={data.Date} ExpeImage={data.Image} />
         )
         )
       }

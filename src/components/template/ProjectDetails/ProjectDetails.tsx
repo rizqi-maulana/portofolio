@@ -45,14 +45,14 @@ export default function ProjectDetails() {
       }
     }
     fetchProject()
-  }, [])
+  }, [decodeDetailsid])
 
   const HandleCopied = useCallback(() => {
     toast.success("Link copied to clipboard", {
       position: "top-center"
     });
     navigator.clipboard.writeText(`https://maulanya.com/projects/details/${detailsid}`)
-  }, [])
+  }, [detailsid])
 
   return (
     <>
