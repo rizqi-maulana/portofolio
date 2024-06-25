@@ -1,4 +1,4 @@
-import Smkn2mtr from "@/components/elements/smkn2mtr"
+import { Smkn2mtr } from "@/components/elements/smkn2mtr"
 import { PiGraduationCap } from "react-icons/pi";
 
 export default function Education() {

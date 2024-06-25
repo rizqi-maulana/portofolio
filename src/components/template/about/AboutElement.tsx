@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Loading from "../../../app/loading";
 import Skill from "@/components/Organism/about/Skill";
 import { fetchData } from "@/app/api/fetch-token/fetchdata";
+import { Work } from "@/components/Organism/about/Work";
 import CryptoJS from "crypto-js";
 import Trip from "@/components/Organism/about/Trip";
 import AboutMe from "@/components/Organism/about/Aboutme";
@@ -65,7 +66,10 @@ export default function AboutElement() {
                 <AboutMe Photo={Photo} About={About} access={access} SetShowUpdateSkill={SetShowUpdateSkill} />
                 <div className="h-[1px] mt-8 bg-[#919191]" />
                 <div className="block lg:flex mt-3 lg:justify-between w-full">
-                    <Education />
+                    <div className="grid gap-5 md:gap-10">
+                        <Education />
+                        <Work />
+                    </div>
                     <Trip />
                 </div>
             </section>

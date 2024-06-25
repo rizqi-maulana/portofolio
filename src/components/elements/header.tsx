@@ -77,9 +77,9 @@ export default function Header() {
 
     return (
         <>
-            {
+            {/* {
                 ShowLoading && <Loading />
-            }
+            } */}
             <header className="w-full flex md:px-7 md:mt-5 px-5 py-2 bg-red justify-between ">
                 <h1 className="font-bold md:text-2xl sm:text-xl">Maulana</h1>
                 <nav>

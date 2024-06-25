@@ -7,6 +7,7 @@ import { FaDiscord } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { BsTelegram } from "react-icons/bs";
 import { useEffect, useMemo, useState } from "react";
+import { FaLinkedin } from "react-icons/fa";
 import Loading from "@/app/loading";
 import Link from "next/link";
 import ProfileImg from '@/assets/image/profile.jpg'
@@ -23,6 +24,7 @@ export default function Profile() {
     const [Discord, setDiscord] = useState<string>('');
     const [Telegram, setTelegram] = useState<string>('');
     const [Github, setGithub] = useState<string>('');
+    const [Linkedin, setLinkedin] = useState<string>('');
 
 
     const GetUserDetails = async () => {
@@ -73,7 +75,9 @@ export default function Profile() {
             if (data.name === 'github') {
                 setGithub(data.link)
             }
-
+            if (data.name === 'linkedin') {
+                setLinkedin(data.link)
+            }
         });
 
     }, [Media])
@@ -107,10 +111,11 @@ export default function Profile() {
 
                     <h2 className="md:text-sm text-xs md:mt-5 mt-3">Find me on</h2>
                     <div className="flex justify-between md:justify-start mt-2 gap-4">
-                        <a href={Instagram} target="_blank" rel="noopener noreferrer"> <BsInstagram className="md:w-[25px] md:h-[25px]" /></a>
-                        <a href={Discord} target="_blank" rel="noopener noreferrer"> <FaDiscord className="relative left-[-5px] md:w-[25px] md:h-[25px]" /></a>
-                        <a href={Github} target="_blank" rel="noopener noreferrer"> <FaGithub className="relative left-[-10px] md:w-[25px] md:h-[25px]" /></a>
-                        <a href={Telegram} target="_blank" rel="noopener noreferrer"><BsTelegram className="relative left-[-15px] md:w-[25px] md:h-[25px]" /></a>
+                        <Link href={Instagram} target="_blank" rel="noopener noreferrer"> <BsInstagram className="md:w-[25px] md:h-[25px]" /></Link>
+                        <Link href={Discord} target="_blank" rel="noopener noreferrer"> <FaDiscord className="relative  md:w-[25px] md:h-[25px]" /></Link>
+                        <Link href={Github} target="_blank" rel="noopener noreferrer"> <FaGithub className="relative  md:w-[25px] md:h-[25px]" /></Link>
+                        <Link href={Telegram} target="_blank" rel="noopener noreferrer"><BsTelegram className="relative md:w-[25px] md:h-[25px]" /></Link>
+                        <Link href={Linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin className="relative md:w-[25px] md:h-[25px]" /></Link>
                     </div>
                 </div>
             </div>
