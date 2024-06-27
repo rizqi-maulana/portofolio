@@ -15,10 +15,10 @@ export default function AboutMe({ Photo, About, access, SetShowUpdateSkill }: Ab
   return (
     <section className="lg:flex block">
       <div>
-        <div className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] border-2 border-white rounded-xl md:mt-20 mt-10 mx-auto relative bg-[#151527]">
+        <div className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] hover:border-2 border-white rounded-xl md:mt-20 mt-10 mx-auto relative bg-[#151527] group">
           <Image
             src={Photo || Profile}
-            className="rounded-xl w-[240px] h-[240px] md:w-[300px] md:h-[300px] absolute md:left-[-40px] md:top-[-40px] left-[-20px] top-[-20px] object-cover"
+            className="rounded-xl w-[240px] h-[240px] md:w-[300px] md:h-[300px] group-hover:transition-all duration-300 absolute md:group-hover:left-[-20px] md:group-hover:top-[-20px] group-hover:left-[-20px] group-hover:top-[-20px] left-0 top-0 object-cover group-hover:scale-110"
             width={250}
             height={250}
             alt="Picture of the author"
@@ -35,7 +35,11 @@ export default function AboutMe({ Photo, About, access, SetShowUpdateSkill }: Ab
             <CiBookmark className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] relative left-[-5px]" />
             <h2 className="font-bold text-xl">About Me</h2>
           </div>
-          <p className="md:text-sm text-[12px] mt-3">{About}</p>
+          {
+            About.split('\n').map((item: string, index: number) => (
+              <p key={index} className="md:text-sm text-[12px] mt-3">{item}</p>
+            ))
+          }
           <div className="mt-5 w-full h-[1px] bg-[#919191] md:hidden" />
         </section>
         <Skill access={access} SetShowUpdateSkill={SetShowUpdateSkill} />
