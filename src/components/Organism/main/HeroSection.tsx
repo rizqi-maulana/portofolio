@@ -6,7 +6,7 @@ export default function HeroSection() {
       <main>
         <Profile />
       </main>
-      <div className="mt-10 w-full h-[1px] bg-[#919191]" />
+      <div className="mt-10 w-full rounded-full h-[1px] bg-[#919191]" />
     </section>
   )
 }

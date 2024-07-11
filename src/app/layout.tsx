@@ -1,10 +1,10 @@
 import 'animate.css';
 import "@globals";
 import { poppins } from "@/assets/fonts/fonts";
-import 'react-toastify/dist/ReactToastify.css';
 import Header from '@/components/elements/header';
 import { Metadata } from "next";
 import { GetPassword } from '@/providers/getPasswords';
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={`${poppins.className} dark`}>
         <Header />
         <GetPassword>
           {children}

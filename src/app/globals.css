@@ -17,7 +17,7 @@ html {
 body {
   padding-bottom: 100px;
   background: radial-gradient(ellipse 50% 80% at 50% -30%, #1e1e4d 0, #0d0d18)
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)) !important;
   color: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,7 +28,6 @@ body {
   height: 3px;
   position: relative;
   overflow: hidden;
-  /* background-color: #ddd; */
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;

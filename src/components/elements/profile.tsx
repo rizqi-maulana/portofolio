@@ -110,7 +110,7 @@ export default function Profile() {
                     <p className="md:text-lg text-[10px] text-[#919191]">@{Username}</p>
 
                     <h2 className="md:text-sm text-xs md:mt-5 mt-3">Find me on</h2>
-                    <div className="flex justify-between md:justify-start mt-2 gap-4">
+                    <div className="flex justify-between md:justify-start mt-2 gap-2 md:gap-4">
                         <Link href={Instagram} target="_blank" rel="noopener noreferrer"> <BsInstagram className="md:w-[25px] md:h-[25px]" /></Link>
                         <Link href={Discord} target="_blank" rel="noopener noreferrer"> <FaDiscord className="relative  md:w-[25px] md:h-[25px]" /></Link>
                         <Link href={Github} target="_blank" rel="noopener noreferrer"> <FaGithub className="relative  md:w-[25px] md:h-[25px]" /></Link>
@@ -120,8 +120,8 @@ export default function Profile() {
                 </div>
             </div>
             <div>
-                <p className="md:text-xl text-[12px] mt-10">{Description}</p>
-                <Link href={"/about"} className="text-[#838383] md:text-sm text-[10px] mt-1">Click here For More...</Link>
+                <p className="md:text-base text-[12px] mt-10">{Description}</p>
+                <Link href={"/about"} className="text-[#838383] md:text-xs text-[10px] mt-1">Click here For More...</Link>
             </div>
         </>
     )

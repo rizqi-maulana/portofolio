@@ -1,11 +1,10 @@
 "use client"
-
-import Header from "@/components/elements/header"
+import { toast, ToastContainer } from 'react-toastify';
 import Image from 'next/image'
 import { FaKey } from "react-icons/fa6";
 import { CiSaveDown2 } from "react-icons/ci";
 import React, { FormEvent, useEffect, useState } from 'react';
-import SuccessCard from '@/components/elements/successcard';
+import { MdToken } from "react-icons/md";
 import { fetchData } from '@/app/api/fetch-token/fetchdata';
 import CryptoJS from 'crypto-js';
 import { useRouter } from 'next/navigation';
@@ -17,18 +16,20 @@ export default function ProfileElement() {
     const [Username, SetUsername] = useState<string>('');
     const [Description, SetDescription] = useState<string>('');
     const [Password, SetPassword] = useState<string>('');
+    const [InputNewPassword, setInputNewPassword] = useState<string | null>(null)
+    const [NewPassword, setNewpassword] = useState<string>()
     const [Email, SetEmail] = useState<string>('');
     const [About, SetAbout] = useState<string>('');
     const [Profileimg, SetProfileimg] = useState<string>('');
-    const [showSuccess, setShowSuccess] = useState(false)
     const [userToken, setUserToken] = useState<string>()
-    const SecretKey = process.env.NEXT_PUBLIC_SECRET_KEY
     const [access, setAccess] = useState<boolean>(false)
     const [SelectedImage, setSelectedImage] = useState<string>('');
     const [SelectedFile, setSelectedFile] = useState<File | undefined>()
     const [NewToken, setNewToken] = useState<string>('')
     const [Token, SetToken] = useState<string>('');
     const [Loading, setLoading] = useState<boolean>(false)
+    const PasswordKey = process.env.NEXT_PUBLIC_PASSWORD_KEY
+    const SecretKey = process.env.NEXT_PUBLIC_SECRET_KEY
     // const [Discord, SetDiscord] = useState<string>();
     // const [Telegram, SetTelegram] = useState<string>();
     // const [Github, SetGithub] = useState<string>();
@@ -40,15 +41,15 @@ export default function ProfileElement() {
             })
             const data = await response.json()
             if (data) {
-                SetDisplayName(data[0].display_name);
-                SetProfileimg(data[0].photo)
-                SetUsername(data[0].username);
-                SetDescription(data[0].description);
-                SetPassword(data[0].password);
-                SetEmail(data[0].email);
-                SetAbout(data[0].about);
-                SetToken(data[0].token);
-
+                const datas = data[0]
+                SetDisplayName(datas.display_name);
+                SetProfileimg(datas.photo)
+                SetUsername(datas.username);
+                SetDescription(datas.description);
+                SetPassword(datas.password);
+                SetEmail(datas.email);
+                SetAbout(datas.about);
+                SetToken(datas.token);
                 // SetDiscord(data[0].discord);
                 // SetTelegram(data[0].telegram);
                 // SetGithub(data[0].github);
@@ -130,7 +131,7 @@ export default function ProfileElement() {
                 display_name: DisplayName,
                 username: Username,
                 description: Description,
-                password: Password,
+                password: NewPassword ? NewPassword : Password,
                 email: Email,
                 about: About,
                 token: NewToken !== '' ? NewToken : Token,
@@ -143,7 +144,7 @@ export default function ProfileElement() {
         })
         const data = await response.json()
         if (data.status === 'success') {
-            setShowSuccess(true)
+            toast.success('Profile Updated')
             setTimeout(() => {
                 router.push('/')
             }, 4000);
@@ -165,6 +166,23 @@ export default function ProfileElement() {
     const ChangeToken = async () => {
         setNewToken(uuidv4())
     }
+
+    const FungiNewPass = async () => {
+        if (InputNewPassword === null || InputNewPassword?.length <= 0) {
+            console.log('kosong');
+        } else {
+            if (PasswordKey) {
+                const encryptNewPass = CryptoJS.AES.encrypt(InputNewPassword, PasswordKey).toString();
+                setNewpassword(encryptNewPass)
+                console.log(encryptNewPass);
+
+            }
+        }
+    }
+
+    const handleInputNewPassword = async () => {
+        FungiNewPass()
+    }
     return (
         <>
             {
@@ -174,9 +192,7 @@ export default function ProfileElement() {
 
                 </div>
             }
-            {
-                showSuccess && <SuccessCard message="Profile Updated" />
-            }
+            <ToastContainer />
 
             {
                 access && <div>
@@ -188,21 +204,25 @@ export default function ProfileElement() {
                                 width={100}
                                 height={100}
                                 alt="Picture of the author"
-                                sizes="(100vw)"
+                                sizes="100vw"
                             />
                             <label htmlFor="picture" className='cursor-pointer text-[12px] text-[#1572B6] block text-center'>Change Picture</label>
-                            <button type='button' className='bg-[#151527] px-3 py-2 rounded-[5px] mt-5 items-center hidden md:flex' onClick={() => ChangeToken()} ><FaKey className='mr-1' /> Reset Token</button>
+                            <p className='text-xs mt-5 p-3 bg-slate-800 rounded-md mx-auto hidden md:block'>Note: <br /> Reset Token to Logout from all Devices</p>
+                            <button type='button' className='bg-[#151527] px-3 py-2 rounded-[5px] mt-5 items-center hidden md:flex' onClick={() => ChangeToken()} ><MdToken className='mr-1' /> Reset Token</button>
+                            <button type='button' className='bg-[#151527] px-3 py-2 rounded-[5px] mt-5 items-center hidden md:flex' onClick={() => handleInputNewPassword()} ><FaKey className='mr-1' /> Update Password</button>
                             <button type='submit' className='bg-[#151527] px-3 py-2 rounded-[5px] mt-5 items-center hidden md:flex'><CiSaveDown2 className='mr-1' /> Save Change</button>
                         </div>
                         <div className='flex flex-col items-center md:ml-20'>
                             <input type="file" name="picture" id="picture" className='hidden' accept='image/*' onChange={handleImageUpload} />
                             <div className='flex flex-col items-start w-full'>
-                                <label htmlFor="DName" className='text-[12px] font-bold'>Display Name:</label>
+                                <label htmlFor="DName" className='text-[12px] font-bold mt-5'>Display Name:</label>
                                 <input type="text" id='DName' value={DisplayName} className='w-full h-[35px] md:w-[700px] md:h-[45px] border-2 border-white rounded-[8px] mt-1 bg-transparent text-[11px] px-2' onChange={(e) => SetDisplayName(e.target.value)} />
-                                <label htmlFor="DName" className='text-[12px] font-bold'>Username:</label>
+                                <label htmlFor="DName" className='text-[12px] font-bold mt-5'>Username:</label>
                                 <input type="text" id='DName' value={Username} className='w-full h-[35px] md:w-[700px] md:h-[45px] border-2 border-white rounded-[8px] mt-1 bg-transparent text-[11px] px-2' onChange={(e) => SetUsername(e.target.value)} />
                                 <label htmlFor="Password" className='text-[12px] font-bold mt-5'>Password:</label>
                                 <input type="text" id='Password' readOnly defaultValue={Password} className='w-full h-[35px] md:w-[700px] md:h-[45px] border-2 border-white rounded-[8px] mt-1 bg-transparent text-[11px] px-2' onChange={(e) => SetPassword(e.target.value)} />
+                                <label htmlFor="InputNewPassword" className='text-[12px] font-bold mt-5'>New Password:</label>
+                                <input type="text" id='InputNewPassword' placeholder="New Password" className='w-full h-[35px] md:w-[700px] md:h-[45px] border-2 border-white rounded-[8px] mt-1 bg-transparent text-[11px] px-2' onChange={(e) => setInputNewPassword(e.target.value)} />
                                 <label htmlFor="Email" className='text-[12px] font-bold mt-5'>Email:</label>
                                 <input type="text" readOnly defaultValue={Email} className='w-full h-[35px] md:w-[700px] md:h-[45px] border-2 border-white rounded-[8px] mt-1 bg-transparent text-[11px] px-2' />
                                 <label htmlFor="About" className='text-[12px] font-bold mt-5'>About:</label>
@@ -219,8 +239,10 @@ export default function ProfileElement() {
                         <input type="text" id='Instagram' value={Instagram} className='w-full h-[35px] md:w-[700px] md:h-[45px] border-2 border-white rounded-[8px] mt-1 bg-transparent text-[11px] px-2' /> */}
                                 <label htmlFor="Token" className='text-[12px] font-bold mt-5'>Token:</label>
                                 <input type="text" readOnly value={NewToken === '' ? Token : NewToken} className='w-full h-[35px] md:w-[700px] md:h-[45px] border-2 border-white rounded-[8px] mt-1 bg-transparent text-[11px] px-2' />
+                                <p className='text-xs mt-5 p-3 bg-slate-800 rounded-md mx-auto md:hidden'>Note: Reset Token to Logout from all Devices</p>
                             </div>
-                            <button type='button' className='bg-[#151527] px-3 py-2 rounded-[5px] mt-5 flex items-center md:hidden' onClick={() => ChangeToken()} ><FaKey className='mr-1' /> Reset Token</button>
+                            <button type='button' className='bg-[#151527] px-3 py-2 rounded-[5px] mt-5 flex items-center md:hidden' onClick={() => ChangeToken()} ><MdToken className='mr-1' /> Reset Token</button>
+                            <button type='button' className='bg-[#151527] px-3 py-2 rounded-[5px] mt-5 flex items-center md:hidden' onClick={() => handleInputNewPassword()} ><FaKey className='mr-1' /> New Password</button>
                             <button type='submit' className='bg-[#151527] px-3 py-2 rounded-[5px] mt-5 flex items-center md:hidden'><CiSaveDown2 className='mr-1' /> Save Change</button>
                         </div>
 

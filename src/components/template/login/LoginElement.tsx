@@ -2,22 +2,20 @@
 
 import { ChangeEvent, FormEvent, useEffect, useState, useRef, useMemo } from "react"
 import CryptoJS from "crypto-js"
-import ErrorCard from "@/components/elements/errorcard"
+// import ErrorCard from "@/components/elements/errorcard"
 import { useRouter } from "next/navigation"
 import { fetchData } from "../../../app/api/fetch-token/fetchdata"
-import SuccessCard from "@/components/elements/successcard"
+// import SuccessCard from "@/components/elements/successcard"
+import { toast, ToastContainer } from 'react-toastify';
 
 export default function LoginElement() {
     const router = useRouter()
     const ShowHidePass = useRef<any>(null)
     const ShowHideText = useRef<any>(null)
-    const [email, setEmail] = useState<string | any>()
-    const [password, setPassword] = useState<string>()
+    const [email, setEmail] = useState<null | any>(null)
+    const [password, setPassword] = useState<string | null>(null)
     const [access, setAccess] = useState<boolean>(false)
-    const [errormsg, setErrormsg] = useState<string | any>()
-    const [errorstats, setErrorstats] = useState<boolean>(false)
     const [userToken, setUserToken] = useState<string>()
-    const [showSuccess, setShowSuccess] = useState<boolean>(false)
     const PasswordKey = process.env.NEXT_PUBLIC_PASSWORD_KEY
     const SecretKey = process.env.NEXT_PUBLIC_SECRET_KEY
 
@@ -57,7 +55,15 @@ export default function LoginElement() {
 
         const data = await res.json()
         const userData = await data[0]
-        if (data) {
+
+        if (data.length <= 0) {
+            if (email === null || password === null) {
+                toast.error('Please enter email and password')
+            } else {
+                toast.error('Email not Found');
+            }
+        } else {
+            console.log('ada');
             if (PasswordKey && SecretKey) {
                 const decryptUserPassword = CryptoJS.AES.decrypt(userData.password, PasswordKey).toString(CryptoJS.enc.Utf8);
 
@@ -67,20 +73,16 @@ export default function LoginElement() {
                     window.location.reload()
 
                 } else {
-                    setErrormsg('Email or Password is Wrong');
-                    setErrorstats(true);
+                    toast.error('Password is Wrong');
                 }
             }
-        } else {
-            setErrormsg('Email not found');
-            setErrorstats(true);
         }
 
     }
 
     useEffect(() => {
         const navigate = () => {
-            setShowSuccess(true)
+            toast.success('Login Successful')
             setTimeout(() => {
                 router.push('/')
             }, 4000);
@@ -104,12 +106,7 @@ export default function LoginElement() {
     }
     return (
         <>
-            {
-                showSuccess && <SuccessCard message="Login Successful" />
-            }
-            {errorstats &&
-                <ErrorCard message={errormsg} />
-            }
+            <ToastContainer />
             <section className="px-4 flex flex-col items-center h-full">
                 <h1 className="font-bold mb-5 text-xl text-center mt-20">Welcome Back</h1>
                 <form onSubmit={HandleLogin} className="bg-[#151527] p-5 rounded-[5px]">
