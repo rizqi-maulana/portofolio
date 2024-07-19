@@ -85,17 +85,17 @@ export default function Header() {
                 <nav>
                     <IoMenu className="text-2xl md:hidden" onClick={MobileNavHandler} />
                     {ShowMobileNav && <MobileVavbar />}
-                    <div className="hidden md:flex">
-                        <button onClick={() => handleClick('/')} className={clsx('flex mr-5', {
-                            'animate-desktopnav text-[#7e7eff]': pathname === '/'
+                    <div className="hidden md:flex items-center gap-5">
+                        <button onClick={() => handleClick('/')} className={clsx('hover:text-[#7e7eff]', {
+                            'animate-desktopnav text-[#7e7eff] underline': pathname === '/'
                         })}>Home</button>
-                        <button onClick={() => handleClick('/about')} className={clsx('flex mr-5', {
-                            'animate-desktopnav text-[#7e7eff]': pathname === '/about'
+                        <button onClick={() => handleClick('/about')} className={clsx('hover:text-[#7e7eff]', {
+                            'animate-desktopnav text-[#7e7eff] underline': pathname === '/about'
                         })}>About</button>
-                        <button onClick={() => handleClick('/projects')} className={clsx('flex mr-5', {
-                            'animate-desktopnav text-[#7e7eff]': pathname === '/projects'
+                        <button onClick={() => handleClick('/projects')} className={clsx('hover:text-[#7e7eff]', {
+                            'animate-desktopnav text-[#7e7eff] underline': pathname === '/projects'
                         })}>Projects</button>
-                        <a href="mailto:maulanarizq@gmail.com" className='flex mr-5'>Contact</a>
+                        <a href="mailto:maulanarizq@gmail.com" className="hover:text-[#7e7eff]">Contact</a>
                         {
                             access &&
                             <button onClick={() => SetShowAccMenu(!ShowAccMenu)} className="w-[30px] h-[30px] rounded-full">

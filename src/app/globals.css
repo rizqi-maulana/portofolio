@@ -19,6 +19,7 @@ body {
   background: radial-gradient(ellipse 50% 80% at 50% -30%, #1e1e4d 0, #0d0d18)
     rgb(var(--background-start-rgb)) !important;
   color: white;
+  height: max-content;
   background-repeat: no-repeat;
   background-size: cover;
 }
