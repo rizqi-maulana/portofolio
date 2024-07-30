@@ -89,7 +89,7 @@ export default function Projectcard({ title, description, tech, website, github,
                 <div className='p-2 md:p-4 pt-16 md:pt-24 h-[210px] md:h-[280px] flex w-full'>
                     <div className='px-2'>
                         <h2 className='font-bold md:text-xl text-xs'>{title}</h2>
-                        <p className='md:text-sm text-[10px]'>{description}</p>
+                        <p className='md:text-sm text-[10px]'>{description.slice(0, 170)} {description.length > 170 ? '...' : ''}</p>
                         <div className='flex mt-2'>
                             {
                                 tech.map((tech: any) => (

@@ -8,13 +8,9 @@ export const Work = () => {
       <div className="flex mt-5">
         <MdWork className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] relative left-[-5px]" />
         <h2 className="font-bold text-xl">Work Experience</h2>
+        <p></p>
       </div>
-      {
-        experince.map((data: any, id: number) => (
-          <Experience key={id} Company={data.Company} Location={data.Location} Date={data.Date} ExpeImage={data.Image} />
-        )
-        )
-      }
+      <Experience />
     </section>
   )
 }
