@@ -124,9 +124,9 @@ export const Experience = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-sm md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-neutral-600 text-sm md:text-sm lg:text-base h-96 md:h-fit md:max-h-52 pb-10 overflow-y-auto flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] "
                   >
-                    <div className="max-h-52 overflow-y-auto p-4" dangerouslySetInnerHTML={{ __html: active.Content }} />
+                    <div dangerouslySetInnerHTML={{ __html: active.Content }} />
                   </motion.div>
                 </div>
               </div>
