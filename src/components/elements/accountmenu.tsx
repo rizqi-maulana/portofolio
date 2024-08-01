@@ -35,7 +35,6 @@ export default function AccountMenu() {
 
                 <button onClick={() => HandleLogout()} className="flex items-center justify-center mr-5 text-red-500"><IoMdLogOut className="mr-3 w-[20px] h-[20px]" /> Logout</button>
 
-
             </div>
         </>
     )

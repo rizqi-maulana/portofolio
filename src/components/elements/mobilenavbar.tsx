@@ -11,15 +11,18 @@ import clsx from "clsx";
 import { fetchData } from "@/app/api/fetch-token/fetchdata";
 import CryptoJS from "crypto-js";
 import { IoMdSettings } from "react-icons/io";
+import { useContext } from "react";
+import { UserContext } from "@/app/Context";
 
 
 export default function MobileVavbar() {
     const router = useRouter()
-    const [userToken, setUserToken] = useState<string>()
-    const SecretKey = process.env.NEXT_PUBLIC_SECRET_KEY
-    const [access, setAccess] = useState<boolean>(false)
+    // const [userToken, setUserToken] = useState<string>()
+    // const SecretKey = process.env.NEXT_PUBLIC_SECRET_KEY
+    // const [access, setAccess] = useState<boolean>(false)
     const pathname = usePathname()
     const [ShowLoading, SetShowLoading] = useState(false)
+    const user = useContext(UserContext)
 
     function handleClick(e: string): void {
         SetShowLoading(true)
@@ -38,27 +41,27 @@ export default function MobileVavbar() {
         window.location.reload()
     }
 
-    useEffect(() => {
-        fetchData()
-            .then(data => {
-                setUserToken(data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    }, [])
-    useEffect(() => {
-        const token = localStorage.getItem('token')
+    // useEffect(() => {
+    //     fetchData()
+    //         .then(data => {
+    //             setUserToken(data);
+    //         })
+    //         .catch(error => {
+    //             console.error('Error:', error);
+    //         });
+    // }, [])
+    // useEffect(() => {
+    //     const token = localStorage.getItem('token')
 
-        if (token) {
-            if (SecretKey) {
-                const accessToken = CryptoJS.AES.decrypt(token, SecretKey).toString(CryptoJS.enc.Utf8)
-                if (userToken === accessToken) {
-                    setAccess(true)
-                }
-            }
-        }
-    }, [userToken, SecretKey])
+    //     if (token) {
+    //         if (SecretKey) {
+    //             const accessToken = CryptoJS.AES.decrypt(token, SecretKey).toString(CryptoJS.enc.Utf8)
+    //             if (userToken === accessToken) {
+    //                 setAccess(true)
+    //             }
+    //         }
+    //     }
+    // }, [userToken, SecretKey])
 
 
     return (
@@ -77,7 +80,7 @@ export default function MobileVavbar() {
                 })}><FaList className="w-[20px] h-[20px] mr-3" />Projects</button>
                 <a href="mailto:maulanarizq@gmail.com" className='flex mt-2'><IoMailOutline className="w-[20px] h-[20px] mr-3" />Contact</a>
                 {
-                    access && (
+                    user.Access && (
                         <div>
                             <button onClick={() => handleClick('/profile/edit')} className={clsx('flex mt-2', {
                                 'animate-mobilenav text-[#7e7eff]': pathname === '/profile/edit'

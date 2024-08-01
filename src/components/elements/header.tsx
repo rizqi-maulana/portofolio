@@ -12,18 +12,20 @@ import CryptoJS from "crypto-js";
 import AccountMenu from "./accountmenu";
 import Image from "next/image";
 import ProfileImg from "@/assets/image/profile.jpg";
+import { useContext } from "react";
+import { UserContext } from "@/app/Context";
 export default function Header() {
 
     const [ShowMobileNav, SetShowMobileNav] = useState(false)
-    const [userToken, setUserToken] = useState<string>()
-    const SecretKey = process.env.NEXT_PUBLIC_SECRET_KEY
-    const [access, setAccess] = useState<boolean>(false)
+    // const [userToken, setUserToken] = useState<string>()
+    // const SecretKey = process.env.NEXT_PUBLIC_SECRET_KEY
+    // const [access, setAccess] = useState<boolean>(false)
     const router = useRouter()
     const pathname = usePathname()
     const [ShowLoading, SetShowLoading] = useState(false)
-    const [Photo, SetPhoto] = useState<string>('');
+    // const [Photo, SetPhoto] = useState<string>('');
     const [ShowAccMenu, SetShowAccMenu] = useState<boolean>(false)
-
+    const user = useContext(UserContext)
 
     const MobileNavHandler = (): void => {
         SetShowMobileNav(!ShowMobileNav)
@@ -39,40 +41,40 @@ export default function Header() {
         }
     }
 
-    useEffect(() => {
-        fetchData()
-            .then(data => {
-                setUserToken(data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        const GetUserDetails = async () => {
-            const response = await fetch('/api/user-details', {
-                method: "GET",
-            })
-            const data = await response.json()
-            if (data) {
+    // useEffect(() => {
+    //     fetchData()
+    //         .then(data => {
+    //             setUserToken(data);
+    //         })
+    //         .catch(error => {
+    //             console.error('Error:', error);
+    //         });
+    //     const GetUserDetails = async () => {
+    //         const response = await fetch('/api/user-details', {
+    //             method: "GET",
+    //         })
+    //         const data = await response.json()
+    //         if (data) {
 
-                SetPhoto(data[0].photo);
+    //             SetPhoto(data[0].photo);
 
-            }
-        }
-        GetUserDetails()
-    }, [])
+    //         }
+    //     }
+    //     GetUserDetails()
+    // }, [])
 
-    useEffect(() => {
-        const token = localStorage.getItem('token')
+    // useEffect(() => {
+    //     const token = localStorage.getItem('token')
 
-        if (token) {
-            if (SecretKey) {
-                const accessToken = CryptoJS.AES.decrypt(token, SecretKey).toString(CryptoJS.enc.Utf8)
-                if (userToken === accessToken) {
-                    setAccess(true)
-                }
-            }
-        }
-    }, [userToken, SecretKey])
+    //     if (token) {
+    //         if (SecretKey) {
+    //             const accessToken = CryptoJS.AES.decrypt(token, SecretKey).toString(CryptoJS.enc.Utf8)
+    //             if (userToken === accessToken) {
+    //                 setAccess(true)
+    //             }
+    //         }
+    //     }
+    // }, [userToken, SecretKey])
 
 
     return (
@@ -86,21 +88,21 @@ export default function Header() {
                     <IoMenu className="text-2xl md:hidden" onClick={MobileNavHandler} />
                     {ShowMobileNav && <MobileVavbar />}
                     <div className="hidden md:flex items-center gap-5">
-                        <button onClick={() => handleClick('/')} className={clsx('hover:text-[#7e7eff]', {
+                        <button onClick={() => handleClick('/')} className={clsx('hover:text-[#a9a9f6]', {
                             'animate-desktopnav text-[#7e7eff] underline': pathname === '/'
                         })}>Home</button>
-                        <button onClick={() => handleClick('/about')} className={clsx('hover:text-[#7e7eff]', {
+                        <button onClick={() => handleClick('/about')} className={clsx('hover:text-[#a9a9f6]', {
                             'animate-desktopnav text-[#7e7eff] underline': pathname === '/about'
                         })}>About</button>
-                        <button onClick={() => handleClick('/projects')} className={clsx('hover:text-[#7e7eff]', {
+                        <button onClick={() => handleClick('/projects')} className={clsx('hover:text-[#a9a9f6]', {
                             'animate-desktopnav text-[#7e7eff] underline': pathname === '/projects'
                         })}>Projects</button>
-                        <a href="mailto:maulanarizq@gmail.com" className="hover:text-[#7e7eff]">Contact</a>
+                        <a href="mailto:maulanarizq@gmail.com" className="hover:text-[#a9a9f6]">Contact</a>
                         {
-                            access &&
+                            user.Access &&
                             <button onClick={() => SetShowAccMenu(!ShowAccMenu)} className="w-[30px] h-[30px] rounded-full">
                                 <Image
-                                    src={Photo || ProfileImg}
+                                    src={user.Photo || ProfileImg}
                                     alt="profile"
                                     width={30}
                                     height={30}
