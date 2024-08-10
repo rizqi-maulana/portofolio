@@ -1,14 +1,36 @@
-import CLoudGakkai from '@/assets/image/CloudGakkai.png'
+// import CLoudGakkai from '@/assets/image/CloudGakkai.png'
 
 export const experince: Array<any> = [
   {
     Company: "Cloud Gakkai",
-    Location: "Septan, Tangerang, Indonesia",
+    Location: "Tangerang, Indonesia",
     Date: "Jan 2024 - Dec 2024",
-    Image: CLoudGakkai,
-    Link: "https://cloudgakkail.com",
-    Content: `
-         Cloud Gakkai is a company engaged in the technology and creative industries, moving through the ideas of young diamonds, showing your extraordinary products to the world through brilliant and extraordinary ideas.
+    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1723277795/CloudGakkai_edjqwz.webp',
+    Link: "https://cloudgakkai.com/",
+    Content: `Front-End Developer - Cloud Gakkai
+         • Develop and Maintain Web Applications: Create and maintain web applications using JavaScript, TypeScript, React.js, and Next.js.
+• Collaborate with Teams: Meet with clients and team members to discuss project requirements and updates.
+• Implement and Test Features: Integrate and test new features, ensuring compatibility across browsers and devices.
+          `
+  },
+  {
+    Company: "LumoSites",
+    Location: "Mataram, NTB, Indonesia",
+    Date: " 2023 - Now",
+    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1723277828/3_r2o1mw.webp',
+    Link: "https://lumosites.com",
+    Content: `Founder & Web Developer - LumoSites
+         • Founder and Web Developer at LumoSites: Manage team and develop websites for clients from the services provided, work and innovate new things..
+          `
+  },
+  {
+    Company: "UnboxLabs",
+    Location: "Tangerang, Banten, Indonesia",
+    Date: " 2023 - Now",
+    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1723277846/IMG-20231030-WA0002-removebg-preview_gllbl6.webp',
+    Link: "https://unboxlabs.id/",
+    Content: `Mentor - UnboxLabs
+         • Mentor at Unboxlabs: Guide and support junior developers in improving their technical skills and mastering best practices in web development.
           `
   }
 ]

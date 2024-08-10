@@ -32,13 +32,13 @@ export default function Header() {
     }
 
     function handleClick(e: string): void {
-        SetShowLoading(true)
+        // SetShowLoading(true)
         setTimeout(() => {
             router.push(e)
         }, 500);
-        if (pathname === e) {
-            SetShowLoading(false)
-        }
+        // if (pathname === e) {
+        //     SetShowLoading(false)
+        // }
     }
 
     // useEffect(() => {

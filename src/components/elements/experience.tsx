@@ -126,7 +126,12 @@ export const Experience = () => {
                     exit={{ opacity: 0 }}
                     className="text-neutral-600 text-sm md:text-sm lg:text-base h-96 md:h-fit md:max-h-52 pb-10 overflow-y-auto flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] "
                   >
-                    <div dangerouslySetInnerHTML={{ __html: active.Content }} />
+                    {
+                      active.Content.split('\n').map((item: string, index: number) => (
+                        <p key={index} className="md:text-sm text-[12px] mt-3">{item}</p>
+                      ))
+                    }
+                    {/* <div dangerouslySetInnerHTML={{ __html: active.Content }} /> */}
                   </motion.div>
                 </div>
               </div>
