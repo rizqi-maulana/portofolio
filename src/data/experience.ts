@@ -27,7 +27,7 @@ export const experince: Array<any> = [
     Company: "UnboxLabs",
     Location: "Tangerang, Banten, Indonesia",
     Date: " 2023 - Now",
-    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1723277846/IMG-20231030-WA0002-removebg-preview_gllbl6.webp',
+    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1723472509/1632719299434-removebg-preview_1_ritw2e.webp',
     Link: "https://unboxlabs.id/",
     Content: `Mentor - UnboxLabs
          • Mentor at Unboxlabs: Guide and support junior developers in improving their technical skills and mastering best practices in web development.
