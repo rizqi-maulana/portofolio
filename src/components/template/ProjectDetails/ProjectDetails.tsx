@@ -12,6 +12,7 @@ import { MdOpenInNew } from "react-icons/md"
 import { FaShareAlt } from "react-icons/fa";
 import AnimatedShinyButton from "@/components/elements/animated-shiny-button"
 import { ToastContainer, toast } from 'react-toastify';
+import { GitHubReadme } from "react-github-readme-md";
 
 export default function ProjectDetails() {
   const { detailsid } = useParams()
@@ -22,6 +23,7 @@ export default function ProjectDetails() {
   const [ProjectGithub, setProjectGithub] = useState<string>('')
   const [ProjectLink, setProjectLink] = useState<string>('')
   const decodeDetailsid = decodeURIComponent(`${detailsid}`)
+  const formattedDetailsid = decodeDetailsid.replace(/\s+/g, '-');
   const [DataFound, setDataFound] = useState<boolean>(true)
   useEffect(() => {
     const fetchProject = async () => {
@@ -68,13 +70,11 @@ export default function ProjectDetails() {
               <div className="lg:w-[80%] w-full">
                 <h1 className="lg:text-3xl text-xl font-bold mt-3 lg:mt-0 mb-3">{ProjectTitle}</h1>
                 <p className="lg:text-base text-sm">{ProjectDesc}</p>
-                <div />
                 <div className="mt-10 lg:flex block justify-between">
                   <div>
                     <h3 className="mb-3 font-semibold">Tech Stack:</h3>
                     <div className="flex bg-slate-900 gap-1 p-5 rounded-xl w-full lg:w-[500px]">
                       <AnimatedTooltip items={ProjectTech} />
-
                     </div>
                   </div>
                   <div className="flex flex-col justify-start gap-2">
@@ -104,6 +104,7 @@ export default function ProjectDetails() {
 
                   </div>
                 </div>
+                <GitHubReadme username="maulanya" repo={formattedDetailsid} />
               </div>
             </div>
           </section>
