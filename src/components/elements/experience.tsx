@@ -88,19 +88,19 @@ export const Experience = () => {
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.Company}-${id}`}
-                      className="font-medium text-neutral-700 dark:text-neutral-200 text-base"
+                      className="font-medium text-neutral-200 text-base"
                     >
                       {active.Company}
                     </motion.h3>
                     <motion.p
                       layoutId={`date-${Location}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400 md:text-base text-sm"
+                      className="text-neutral-400 md:text-base text-sm"
                     >
                       {active.Location}
                     </motion.p>
                     <motion.p
                       layoutId={`Date-${Date}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400 md:text-sm text-xs"
+                      className="text-neutral-400 md:text-sm text-xs"
                     >
                       {active.Date}
                     </motion.p>
