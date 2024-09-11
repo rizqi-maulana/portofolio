@@ -93,7 +93,7 @@ export const Experience = () => {
                       {active.Company}
                     </motion.h3>
                     <motion.p
-                      layoutId={`date-${Location}-${id}`}
+                      layoutId={`date-${active.Location}-${id}`}
                       className="text-neutral-400 md:text-base text-sm"
                     >
                       {active.Location}
@@ -124,7 +124,7 @@ export const Experience = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-sm md:text-sm lg:text-base h-96 md:h-fit md:max-h-52 pb-10 overflow-y-auto flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] "
+                    className="text-sm md:text-sm lg:text-base h-96 md:h-fit md:max-h-52 pb-10 overflow-y-auto flex flex-col items-start gap-4 overflow-auto text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] "
                   >
                     {
                       active.Content.split('\n').map((item: string, index: number) => (

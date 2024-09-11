@@ -1,6 +1,5 @@
 import { Experience } from "@/components/elements/experience"
 import { MdWork } from "react-icons/md";
-import { experince } from "@/data/experience";
 
 export const Work = () => {
   return (
