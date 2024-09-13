@@ -5,7 +5,7 @@ export const experince: Array<any> = [
     Company: "Cloud Gakkai",
     Location: "Tangerang, Indonesia",
     Date: "Jan 2024 - Dec 2024",
-    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1723277795/CloudGakkai_edjqwz.webp',
+    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1726211207/CloudGakkai_yfehfc.webp',
     Link: "https://cloudgakkai.com/",
     Content: `Front-End Developer - Cloud Gakkai
          • Develop and Maintain Web Applications: Create and maintain web applications using JavaScript, TypeScript, React.js, and Next.js.
@@ -17,7 +17,7 @@ export const experince: Array<any> = [
     Company: "LumoSites",
     Location: "Mataram, NTB, Indonesia",
     Date: " 2023 - Now",
-    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1723277828/3_r2o1mw.webp',
+    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1726211225/3_mgvys3.webp',
     Link: "https://lumosites.com",
     Content: `Founder & Web Developer - LumoSites
          • Founder and Web Developer at LumoSites: Manage team and develop websites for clients from the services provided, work and innovate new things..
@@ -27,7 +27,7 @@ export const experince: Array<any> = [
     Company: "UnboxLabs",
     Location: "Tangerang, Banten, Indonesia",
     Date: " 2023 - Now",
-    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1723472509/1632719299434-removebg-preview_1_ritw2e.webp',
+    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1726211623/UnboxLabs-removebg-preview_1_perohu.webp',
     Link: "https://unboxlabs.id/",
     Content: `Mentor - UnboxLabs
          • Mentor at Unboxlabs: Guide and support junior developers in improving their technical skills and mastering best practices in web development.
