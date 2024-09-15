@@ -174,6 +174,10 @@ export default function UploadProject({ closeModal }: any) {
                                 <span className="text-[12px]">ReactJS</span>
                             </label>
                             <label className="flex items-center">
+                                <input type="checkbox" name="ReactNative" id="ReactNative" className="tech_check mr-2" onChange={handleCheckboxChange} />
+                                <span className="text-[12px]">React Native</span>
+                            </label>
+                            <label className="flex items-center">
                                 <input type="checkbox" name="NextJS" id="NextJS" className="tech_check mr-2" onChange={handleCheckboxChange} />
                                 <span className="text-[12px]">NextJS</span>
                             </label>
