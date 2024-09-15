@@ -7,7 +7,7 @@ import React, { useEffect, useState, useCallback } from "react";
 export const Skillcard = ({
     items,
     direction = "left",
-    pauseOnHover = false,
+    pauseOnHover = true,
 }: {
     items: {
         name: string;
@@ -80,7 +80,7 @@ export const Skillcard = ({
             <ul
                 ref={scrollerRef}
                 className={cn(
-                    " flex w-max shrink-0 gap-4 py-2 !pr-[700px] md:!pr-10 px-10 md:px-7 flex-nowrap",
+                    " flex w-max shrink-0 gap-4 py-2 !px-[700px] md:!px-32 flex-nowrap",
                     start && "animate-scroll",
                     pauseOnHover && "hover:[animation-play-state:paused]"
                 )}
@@ -90,20 +90,18 @@ export const Skillcard = ({
 
                         key={`${item.icon}${Math.random()}`}
                     >
-                        <blockquote>
-                            <div className='bg-[#151527] w-max p-2 rounded-[5px] flex items-center'>
-                                <Image
-                                    key={item.icon}
-                                    src={item.icon || javascript}
-                                    className="md:w-7 md:h-7 w-[15px] h-[15px]"
-                                    width={28}
-                                    height={28}
-                                    alt="Picture of the author"
-                                    priority={true}
-                                />
-                                <h3 className='text-[10px] md:text-sm ml-2'>{item.name}</h3>
-                            </div>
-                        </blockquote>
+                        <div className='bg-[#151527] w-max p-2 rounded-[5px] flex items-center'>
+                            <Image
+                                key={item.icon}
+                                src={item.icon || javascript}
+                                className="md:w-7 md:h-7 w-[15px] h-[15px]"
+                                width={28}
+                                height={28}
+                                alt="Picture of the author"
+                                priority={true}
+                            />
+                            <h3 className='text-[10px] md:text-sm ml-2'>{item.name}</h3>
+                        </div>
                     </li>
                 ))}
             </ul>

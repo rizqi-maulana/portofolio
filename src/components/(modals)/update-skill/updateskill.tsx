@@ -29,7 +29,7 @@ export default function UpdateSkill({ closeModal }: any) {
             const FetchMySkills = data.map((data: any) => data)
             setMySkills(FetchMySkills)
             FetchMySkills.forEach((data: any) => {
-                const checkbox = document.getElementById(data.name) as HTMLInputElement;
+                const checkbox = document.getElementById(data.id) as HTMLInputElement;
                 if (checkbox) {
                     checkbox.checked = true;
                 }
@@ -39,12 +39,12 @@ export default function UpdateSkill({ closeModal }: any) {
     }, [])
 
     const handleCheckboxChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, checked } = event.target;
+        const { name, checked, id } = event.target;
 
         if (checked) {
             // Code untuk menambahkan skill
             const formdata = new FormData()
-            formdata.append('name', name)
+            formdata.append('id', id)
             const response = await fetch('/api/tech', {
                 method: "POST",
                 body: formdata
@@ -53,7 +53,7 @@ export default function UpdateSkill({ closeModal }: any) {
 
             setMySkills(prevSelection => ([
                 ...prevSelection,
-                { name: name, icon: data }
+                { name: name, icon: data, id }
             ]));
         } else {
             // Code untuk menghapus skill
@@ -104,7 +104,7 @@ export default function UpdateSkill({ closeModal }: any) {
                                 <span className="text-[12px]">ReactJS</span>
                             </label>
                             <label className="flex items-center">
-                                <input type="checkbox" name="ReactNative" id="ReactNative" className="tech_check mr-2" onChange={handleCheckboxChange} />
+                                <input type="checkbox" name="React Native" id="ReactNative" className="tech_check mr-2" onChange={handleCheckboxChange} />
                                 <span className="text-[12px]">React Native</span>
                             </label>
                             <label className="flex items-center">

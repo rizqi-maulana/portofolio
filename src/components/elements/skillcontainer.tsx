@@ -42,11 +42,11 @@ export const Skillcontainer = () => {
                     color="white"
                 ></l-cardio>
             ) : (
-                <>
+                <div className="w-full">
                     <Skillcard items={skillsData} />
                     <Skillcard items={skillsData} direction="right" />
                     <Skillcard items={skillsData} />
-                </>
+                </div>
             )}
         </div>
     );
