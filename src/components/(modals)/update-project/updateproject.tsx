@@ -122,13 +122,13 @@ export default function UpdateProject({ closeModal }: any) {
     }
 
     const handleCheckboxChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, checked } = event.target;
+        const { name, checked, id } = event.target;
 
 
 
         if (checked) {
             const formdata = new FormData()
-            formdata.append('name', name)
+            formdata.append('id', id)
             const response = await fetch('/api/tech', {
                 method: "POST",
                 body: formdata
@@ -137,7 +137,7 @@ export default function UpdateProject({ closeModal }: any) {
 
             setTechStackSelection(prevSelection => ([
                 ...prevSelection,
-                { tech: name, icon: data }
+                { tech: name, icon: data, id }
             ]));
         } else {
             setTechStackSelection(prevSelection => (
