@@ -5,7 +5,7 @@ import { RateLimiterMemory } from 'rate-limiter-flexible';
 
 const rateLimiter = new RateLimiterMemory({
   points: 10,
-  duration: 60,
+  duration: 1,
 });
 
 export async function middleware(req: NextRequest) {
