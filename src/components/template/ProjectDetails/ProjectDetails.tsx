@@ -22,8 +22,9 @@ export default function ProjectDetails() {
   const [ProjectTech, setProjectTech] = useState<any[]>([])
   const [ProjectGithub, setProjectGithub] = useState<string>('')
   const [ProjectLink, setProjectLink] = useState<string>('')
+  const [Readme, setReadme] = useState<string>('')
   const decodeDetailsid = decodeURIComponent(`${detailsid}`)
-  const formattedDetailsid = decodeDetailsid.replace(/\s+/g, '-');
+  // const formattedDetailsid = decodeDetailsid.replace(/\s+/g, '-');
   const [DataFound, setDataFound] = useState<boolean>(true)
   useEffect(() => {
     const fetchProject = async () => {
@@ -44,6 +45,7 @@ export default function ProjectDetails() {
         setProjectTech(data[0].techstack[0].TechStack)
         setProjectGithub(data[0].github)
         setProjectLink(data[0].website)
+        setReadme(data[0].github.match(/\/([^\/]+)\/?$/)[1])
       }
     }
     fetchProject()
@@ -104,7 +106,7 @@ export default function ProjectDetails() {
 
                   </div>
                 </div>
-                <GitHubReadme username="maulanya" repo={formattedDetailsid} />
+                <GitHubReadme username="maulanya" repo={Readme} />
               </div>
             </div>
           </section>
