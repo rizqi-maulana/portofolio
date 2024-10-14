@@ -103,6 +103,7 @@ export default function Header() {
                             <button onClick={() => SetShowAccMenu(!ShowAccMenu)} className="w-[30px] h-[30px] rounded-full">
                                 <Image
                                     src={user.Photo || ProfileImg}
+                                    quality={100}
                                     alt="profile"
                                     width={30}
                                     height={30}

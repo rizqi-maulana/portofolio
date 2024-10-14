@@ -9,6 +9,7 @@ export const Smkn2mtr = () => {
                 className='w-[50px] h-[50px] md:w-[100px] md:h-[100px] object-cover'
                 width={70}
                 height={70}
+                quality={100}
                 alt="SMKN 2 MATARAM"
                 sizes='100vw'
             />

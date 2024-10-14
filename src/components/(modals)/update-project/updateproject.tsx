@@ -182,7 +182,7 @@ export default function UpdateProject({ closeModal }: any) {
                     {
                         SelectedImage && <div className="w-max h-max relative">
                             <h3 className="font-bold text-sm mb-1">Selected Image:</h3>
-                            <Image src={SelectedImage} alt="Selected Image" width={100} height={100} className="mb-2" />
+                            <Image src={SelectedImage} alt="Selected Image" width={100} height={100} className="mb-2" quality={100} />
                         </div>
                     }
 

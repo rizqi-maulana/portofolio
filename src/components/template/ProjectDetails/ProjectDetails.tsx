@@ -67,7 +67,7 @@ export default function ProjectDetails() {
             <div className="flex lg:justify-between flex-col justify-center items-center">
               {
                 ProjectImage &&
-                <Image src={ProjectImage!} className="w-max lg:h-[350px] h-[200px] mb-10 rounded-2xl" width={200} height={200} sizes="100vw" alt={ProjectTitle} />
+                <Image src={ProjectImage!} className="w-max lg:h-[350px] h-[200px] mb-10 rounded-2xl" width={200} height={200} sizes="100vw" alt={ProjectTitle} quality={100} />
               }
               <div className="lg:w-[80%] w-full">
                 <h1 className="lg:text-3xl text-xl font-bold mt-3 lg:mt-0 mb-3">{ProjectTitle}</h1>

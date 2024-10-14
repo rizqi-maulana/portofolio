@@ -203,6 +203,7 @@ export default function ProfileElement() {
                                 className='w-[100px] h-[100px] md:w-[200px] md:h-[200px] rounded-full object-cover mb-3 md:mx-0 mx-auto'
                                 width={100}
                                 height={100}
+                                quality={100}
                                 alt="Picture of the author"
                                 sizes="100vw"
                             />

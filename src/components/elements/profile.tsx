@@ -89,6 +89,7 @@ export default function Profile() {
             <div className="flex md:items-center">
                 <Image
                     src={Photo || ProfileImg}
+                    quality={100}
                     className="rounded-full md:w-[300px] md:h-[300px] w-[100px] h-[100px] object-cover"
                     width={100}
                     height={100}
@@ -100,6 +101,7 @@ export default function Profile() {
                         <h1 className="font-bold md:text-4xl text-xl">{DisplayName}</h1>
                         <Image
                             src={Verify}
+                            quality={100}
                             className="md:w-[25px] md:h-[25px] w-[15px] h-[15px]"
                             width={15}
                             height={15}

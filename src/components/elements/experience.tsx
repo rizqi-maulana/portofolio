@@ -76,6 +76,7 @@ export const Experience = () => {
                   priority
                   width={200}
                   height={200}
+                  quality={100}
                   src={active.Image}
                   alt={active.Company}
                   className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-contain object-top"

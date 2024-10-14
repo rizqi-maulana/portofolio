@@ -21,6 +21,7 @@ export default function AboutMe({ Photo, About, access, SetShowUpdateSkill }: Ab
             className="rounded-xl w-[240px] h-[240px] md:w-[300px] md:h-[300px] group-hover:transition-all duration-300 absolute md:group-hover:left-[-20px] md:group-hover:top-[-20px] group-hover:left-[-20px] group-hover:top-[-20px] left-0 top-0 object-cover group-hover:scale-110"
             width={250}
             height={250}
+            quality={100}
             alt="Picture of the author"
             sizes="100vw"
           />

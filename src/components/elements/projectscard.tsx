@@ -76,12 +76,13 @@ export default function Projectcard({ title, description, tech, website, github,
             {
                 ShowUpdate && <UpdateProject closeModal={SetShowUpdate} />
             }
-            <div className="w-[95%] h-max md:w-[500px] md:h-max bg-[#151527] rounded-[5px] relative flex items-center flex-col md:mx-10 md:mt-60 mt-36">
+            <div className="w-11/12 h-max md:w-[500px] md:h-max bg-[#151527] rounded-[5px] relative flex items-center flex-col md:mx-10 md:mt-60 mt-36">
                 <Image
                     src={thumb}
-                    className="w-max h-[150px] md:w-max md:h-[280px] object-cover absolute md:top-[-200px] top-[-100px] rounded-[5px]"
+                    className="w-11/12 h-[150px] md:h-[280px] object-contain absolute md:top-[-200px] top-[-100px] rounded-[5px]"
                     width={150}
                     height={150}
+                    quality={100}
                     alt="Project Image"
                     priority={true}
                     sizes='100vw'
@@ -97,6 +98,7 @@ export default function Projectcard({ title, description, tech, website, github,
                                         key={`${tech.tech}${Math.random()}`}
                                         src={tech.icon}
                                         className='md:w-[25px] md:h-[25px] mr-1 md:mr-1 w-[15px] h-[15px] object-cover'
+                                        quality={100}
                                         width={15}
                                         height={15}
                                         alt="Tech Stack"

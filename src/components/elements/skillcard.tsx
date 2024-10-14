@@ -100,6 +100,8 @@ export const Skillcard = ({
                                 height={28}
                                 alt="Picture of the author"
                                 priority={true}
+                                quality={100}
+
                             />
                             <h3 className='text-[10px] md:text-sm ml-2'>{item.name}</h3>
                         </div>
