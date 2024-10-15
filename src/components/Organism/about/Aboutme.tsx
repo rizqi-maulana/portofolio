@@ -9,9 +9,11 @@ interface AboutMeType {
   About: string,
   access: boolean,
   SetShowUpdateSkill: any
+  SetShowDetailsSkill: any
+  SkillData: any
 }
 
-export default function AboutMe({ Photo, About, access, SetShowUpdateSkill }: AboutMeType) {
+export default function AboutMe({ Photo, About, access, SetShowUpdateSkill, SetShowDetailsSkill, SkillData }: AboutMeType) {
   return (
     <section className="lg:flex block">
       <div>
@@ -43,7 +45,7 @@ export default function AboutMe({ Photo, About, access, SetShowUpdateSkill }: Ab
           }
           <div className="mt-5 w-full h-[1px] bg-[#919191] md:hidden" />
         </section>
-        <Skill access={access} SetShowUpdateSkill={SetShowUpdateSkill} />
+        <Skill SkillData={SkillData} access={access} SetShowDetailsSkill={SetShowDetailsSkill} SetShowUpdateSkill={SetShowUpdateSkill} />
       </div>
 
     </section>

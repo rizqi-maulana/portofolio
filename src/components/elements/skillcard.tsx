@@ -30,7 +30,7 @@ export const Skillcard = ({
     function addAnimation() {
         if (containerRef.current && scrollerRef.current) {
             const scrollerContent = Array.from(scrollerRef.current.children);
-            containerRef.current.style.setProperty("--animation-duration", "80s");
+            containerRef.current.style.setProperty("--animation-duration", "20s");
 
             scrollerContent.forEach((item) => {
                 const duplicatedItem = item.cloneNode(true);
