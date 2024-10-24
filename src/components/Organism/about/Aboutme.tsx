@@ -2,6 +2,8 @@ import Image from "next/image"
 import { CiBookmark } from "react-icons/ci";
 import Skill from "./Skill";
 import Profile from '@/assets/image/profile.jpg'
+import { FaFilePdf } from "react-icons/fa6";
+
 
 
 interface AboutMeType {
@@ -43,6 +45,7 @@ export default function AboutMe({ Photo, About, access, SetShowUpdateSkill, SetS
               <p key={index} className="md:text-sm text-[12px] mt-3">{item}</p>
             ))
           }
+          <a href="/CV M.Rizqi Maulana.pdf" download className="flex items-center bg-[#1e1e38] text-xs xl:text-base w-max px-3 py-2 mt-2 rounded-[5px]"><FaFilePdf className="mr-2" />CV Summary</a>
           <div className="mt-5 w-full h-[1px] bg-[#919191] md:hidden" />
         </section>
         <Skill SkillData={SkillData} access={access} SetShowDetailsSkill={SetShowDetailsSkill} SetShowUpdateSkill={SetShowUpdateSkill} />

@@ -27,7 +27,7 @@ export default function Skill({ access, SetShowUpdateSkill, SetShowDetailsSkill,
         {/* Admin Access */}
       </div>
       <Skillcontainer SkillData={SkillData} />
-      <button className="flex items-center bg-[#151527] px-3 py-2 mt-2 rounded-[5px]" onClick={() => SetShowDetailsSkill(true)}><GrTechnology className="mr-2" />see Details</button>
+      <button className="flex items-center bg-[#151527] text-xs xl:text-base px-3 py-2 mt-2 rounded-[5px]" onClick={() => SetShowDetailsSkill(true)}><GrTechnology className="mr-2" />see Details</button>
     </section>
   )
 }
