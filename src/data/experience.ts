@@ -16,17 +16,29 @@ export const experince: Array<any> = [
   {
     Company: "LumoSites",
     Location: "Mataram, NTB, Indonesia",
-    Date: " 2023 - Now",
+    Date: "Jan 2023 - Now",
     Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1726211225/3_mgvys3.webp',
     Link: "https://lumosites.com",
     Content: `Founder & Web Developer - LumoSites
-         • Founder and Web Developer at LumoSites: Manage team and develop websites for clients from the services provided, work and innovate new things..
+         • Founder and Web Developer at LumoSites: Manage team and develop websites for clients from the services provided, work and innovate new things.
+          `
+  },
+  {
+    Company: "Full Stack Lombok",
+    Location: "Mataram, NTB, Indonesia",
+    Date: "Jul 2024 - Now",
+    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1733399718/result_cbvrr0.webp',
+    Link: "https://fullstacklombok.com",
+    Content: `Front-End Developer - Full Stack Lombok
+           • Develop and Maintain Web Applications: Create and maintain web applications using JavaScript, TypeScript, React.js, and Next.js.
+• Collaborate with Teams: Meet with clients and team members to discuss project requirements and updates.
+• Implement and Test Features: Integrate and test new features, ensuring compatibility across browsers and devices.
           `
   },
   {
     Company: "UnboxLabs",
     Location: "Tangerang, Banten, Indonesia",
-    Date: " 2023 - Now",
+    Date: "Sep 2023 - Jan 2024",
     Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1726211623/UnboxLabs-removebg-preview_1_perohu.webp',
     Link: "https://unboxlabs.id/",
     Content: `Mentor - UnboxLabs
