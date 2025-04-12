@@ -1,20 +1,13 @@
-import ProjectDetails from "@/components/template/ProjectDetails/ProjectDetails"
+import ProjectDetails from "@/components/template/ProjectDetails/ProjectDetails";
 
 import { Metadata } from "next";
 
-interface DetailsType {
-  params: { detailsid: string };
-}
-
+export const metadata: Metadata = {
+  title: "Project Details",
+  description:
+    "Hi, I'm Rizqi Maulana or often called Maulana and I'm a web developer, this is my portofolio, explaining what projects I've created.",
+};
 
 export default function page() {
-  return <ProjectDetails />
-}
-
-export async function generateMetadata({ params }: DetailsType): Promise<Metadata> {
-  const decodeurl = decodeURIComponent(`${params.detailsid}`)
-  return {
-    title: decodeURIComponent(`${decodeurl}`),
-    description: `project details from ${decodeurl}, explanation of the project, techstack and further information regarding the project.`,
-  };
+  return <ProjectDetails />;
 }

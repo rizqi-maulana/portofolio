@@ -1,21 +1,26 @@
-import Image from "next/image"
+import Image from "next/image";
 import { CiBookmark } from "react-icons/ci";
 import Skill from "./Skill";
-import Profile from '@/assets/image/profile.jpg'
+import Profile from "@/assets/image/profile.jpeg";
 import { FaFilePdf } from "react-icons/fa6";
 
-
-
 interface AboutMeType {
-  Photo: string,
-  About: string,
-  access: boolean,
-  SetShowUpdateSkill: any
-  SetShowDetailsSkill: any
-  SkillData: any
+  Photo: string;
+  About: string;
+  access: boolean;
+  SetShowUpdateSkill: any;
+  SetShowDetailsSkill: any;
+  SkillData: any;
 }
 
-export default function AboutMe({ Photo, About, access, SetShowUpdateSkill, SetShowDetailsSkill, SkillData }: AboutMeType) {
+export default function AboutMe({
+  Photo,
+  About,
+  access,
+  SetShowUpdateSkill,
+  SetShowDetailsSkill,
+  SkillData,
+}: AboutMeType) {
   return (
     <section className="lg:flex block">
       <div>
@@ -30,27 +35,36 @@ export default function AboutMe({ Photo, About, access, SetShowUpdateSkill, SetS
             sizes="100vw"
           />
         </div>
-
       </div>
 
       <div className="block lg:ml-20">
-
         <section>
           <div className="flex mt-10">
             <CiBookmark className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] relative left-[-5px]" />
             <h2 className="font-bold text-xl">About Me</h2>
           </div>
-          {
-            About.split('\n').map((item: string, index: number) => (
-              <p key={index} className="md:text-sm text-[12px] mt-3">{item}</p>
-            ))
-          }
-          <a href="/CV M.Rizqi Maulana.pdf" download className="flex items-center bg-[#1e1e38] text-xs xl:text-base w-max px-3 py-2 mt-2 rounded-[5px]"><FaFilePdf className="mr-2" />CV Summary</a>
+          {About.split("\n").map((item: string, index: number) => (
+            <p key={index} className="md:text-sm text-[12px] mt-3">
+              {item}
+            </p>
+          ))}
+          <a
+            href="/CV M.Rizqi Maulana.pdf"
+            download
+            className="flex items-center bg-[#1e1e38] text-xs xl:text-base w-max px-3 py-2 mt-2 rounded-[5px]"
+          >
+            <FaFilePdf className="mr-2" />
+            CV Summary
+          </a>
           <div className="mt-5 w-full h-[1px] bg-[#919191] md:hidden" />
         </section>
-        <Skill SkillData={SkillData} access={access} SetShowDetailsSkill={SetShowDetailsSkill} SetShowUpdateSkill={SetShowUpdateSkill} />
+        <Skill
+          SkillData={SkillData}
+          access={access}
+          SetShowDetailsSkill={SetShowDetailsSkill}
+          SetShowUpdateSkill={SetShowUpdateSkill}
+        />
       </div>
-
     </section>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { createContext, useEffect, useState } from "react";
 import { fetchData } from "./api/fetch-token/fetchdata";
@@ -12,11 +12,13 @@ const fetchAndCheckToken = async (setAccess: (access: boolean) => void) => {
     const userToken = data;
 
     if (typeof window !== "undefined") {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
 
       if (token && SecretKey) {
-        const accessToken = CryptoJS.AES.decrypt(token, SecretKey).toString(CryptoJS.enc.Utf8);
-        console.log('Access Token:', accessToken);
+        const accessToken = CryptoJS.AES.decrypt(token, SecretKey).toString(
+          CryptoJS.enc.Utf8
+        );
+        console.log("Access Token:", accessToken);
         if (userToken === accessToken) {
           setAccess(true);
         } else {
@@ -27,29 +29,29 @@ const fetchAndCheckToken = async (setAccess: (access: boolean) => void) => {
       }
     }
   } catch (error) {
-    console.error('Error:', error);
+    console.error("Error:", error);
     setAccess(false);
   }
 };
 
 const GetUserDetails = async (SetPhoto: (setPhoto: string) => void) => {
   try {
-    const response = await fetch('/api/user-details', {
+    const response = await fetch("/api/user-details", {
       method: "GET",
     });
     const data = await response.json();
     // console.log('User Details:', data);
     // return data[0]?.photo || '';
-    SetPhoto(data[0]?.photo || '');
+    SetPhoto(data[0]?.photo || "");
   } catch (error) {
-    console.error('Error fetching user details:', error);
-    return '';
+    console.error("Error fetching user details:", error);
+    return "";
   }
 };
 
 const UserProvider = ({ children }: { children: React.ReactNode }) => {
   const [access, setAccess] = useState<boolean | undefined>(undefined);
-  const [Photo, SetPhoto] = useState<string>('');
+  const [Photo, SetPhoto] = useState<string>("");
 
   useEffect(() => {
     const fetchDataAsync = async () => {
