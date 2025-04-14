@@ -76,9 +76,9 @@ export default function MobileVavbar() {
           Home
         </Link>
         <Link
-          href="/projects"
+          href="/certificate"
           className={clsx("flex mt-2", {
-            "animate-mobilenav text-[#7e7eff]": pathname === "/projects",
+            "animate-mobilenav text-[#7e7eff]": pathname === "/certificate",
           })}
         >
           <BiCertification className="w-[20px] h-[20px] mr-3" />
