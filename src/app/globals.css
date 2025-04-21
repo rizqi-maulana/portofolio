@@ -51,6 +51,16 @@ body {
   border-radius: 20px;
 }
 
+@theme inline {
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+ 
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+}
+
 @keyframes lineAnim {
   0% {
     left: -40%;
@@ -62,11 +72,5 @@ body {
   100% {
     left: 100%;
     width: 100%;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
   }
 }
