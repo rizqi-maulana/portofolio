@@ -20,6 +20,8 @@
     "framer-motion": "^11.18.2",
     "i": "^0.3.7",
     "ldrs": "^1.1.6",
+    "lucide-react": "^0.501.0",
+    "motion": "^12.7.4",
     "next": "15.2.4",
     "npm": "^10.9.2",
     "rate-limiter-flexible": "^5.0.5",

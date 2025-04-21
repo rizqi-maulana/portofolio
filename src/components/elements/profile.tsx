@@ -8,7 +8,7 @@ import { FaGithub } from "react-icons/fa";
 import { BsTelegram } from "react-icons/bs";
 import { useEffect, useMemo, useState } from "react";
 import { FaLinkedin } from "react-icons/fa";
-import Loading from "@/app/loading";
+// import Loading from "@/app/loading";
 import Link from "next/link";
 import ProfileImg from "@/assets/image/profile.jpeg";
 
@@ -18,7 +18,7 @@ export default function Profile() {
   const [Description, SetDescription] = useState<string>("");
   const [Photo, SetPhoto] = useState<string>("");
   const [Media, SetMedia] = useState<string[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  // const [loading, setLoading] = useState<boolean>(true);
   const [Instagram, setInstagram] = useState<string>("");
   const [Discord, setDiscord] = useState<string>("");
   const [Telegram, setTelegram] = useState<string>("");
@@ -45,7 +45,7 @@ export default function Profile() {
     if (data) {
       SetMedia(data);
     }
-    setLoading(false);
+    // setLoading(false);
   };
 
   useEffect(() => {
@@ -76,7 +76,7 @@ export default function Profile() {
   }, [Media]);
   return (
     <>
-      {loading && <Loading />}
+      {/* {loading && <Loading />} */}
       <div className="flex md:items-center">
         <Image
           src={Photo || ProfileImg}
