@@ -17,7 +17,7 @@ export default function ShortTrip() {
         <div className="h-[10px] w-[10px] bg-[#767580] mr-1 rounded-full" />
         <div className="text-wrap w-[300px]">
           <h2 className="text-[13px] md:text-sm text-[#767580]">
-            July 2022 - May 2025
+            Jul 2022 - May 2025
           </h2>
           <p className="text-[10px] md:text-[13px]">
             started focusing on web development.

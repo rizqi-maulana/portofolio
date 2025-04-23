@@ -26,7 +26,7 @@ export const experince: Array<any> = [
   {
     Company: "Full Stack Lombok",
     Location: "Mataram, NTB, Indonesia",
-    Date: "Jul 2024 - Now",
+    Date: "Jul 2024 - Dec 2024",
     Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1745027718/219126600_788506168486826_6855691997392164754_n-removebg-preview_1_jp5heu.webp',
     Link: "https://fullstacklombok.com",
     Content: `Front-End Developer - Full Stack Lombok
