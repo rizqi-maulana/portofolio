@@ -76,15 +76,6 @@ export default function MobileVavbar() {
           Home
         </Link>
         <Link
-          href="/certificate"
-          className={clsx("flex mt-2", {
-            "animate-mobilenav text-[#7e7eff]": pathname === "/certificate",
-          })}
-        >
-          <BiCertification className="w-[20px] h-[20px] mr-3" />
-          Certificate
-        </Link>
-        <Link
           href="/about"
           className={clsx("flex mt-2", {
             "animate-mobilenav text-[#7e7eff]": pathname === "/about",
@@ -101,6 +92,15 @@ export default function MobileVavbar() {
         >
           <FaList className="w-[20px] h-[20px] mr-3" />
           Projects
+        </Link>
+        <Link
+          href="/certificate"
+          className={clsx("flex mt-2", {
+            "animate-mobilenav text-[#7e7eff]": pathname === "/certificate",
+          })}
+        >
+          <BiCertification className="w-[20px] h-[20px] mr-3" />
+          Certificate
         </Link>
         <Link href="mailto:maulanarizq@gmail.com" className="flex mt-2">
           <IoMailOutline className="w-[20px] h-[20px] mr-3" />
