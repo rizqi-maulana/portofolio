@@ -1,12 +1,9 @@
-import { Metadata } from "next"
-import LoginElement from "../../../components/template/login/LoginElement";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Login"
+  title: "Login",
 };
 
 export default function Login() {
-    return (
-        <LoginElement />
-    )
+  return <LoginElement />;
 }
