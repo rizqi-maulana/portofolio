@@ -42,7 +42,7 @@ export default function Profile() {
           <div className="flex justify-between md:justify-start mt-2 gap-2 md:gap-4">
             <Link
               href={
-                "https://www.instagram.com/rmaulana1526?igsh=MWF5Y3M5dHRrMmdqNw=="
+                "https://www.instagram.com/maulana151526?igsh=MWF5Y3M5dHRrMmdqNw=="
               }
               target="_blank"
               rel="noopener noreferrer"

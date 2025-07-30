@@ -28,9 +28,9 @@ export default function Projectcard({
       <div className="w-11/12 h-max md:w-[500px] md:h-max bg-[#151527] rounded-[5px] relative flex items-center flex-col md:mx-10 md:mt-60 mt-36">
         <Image
           src={thumb}
-          className="w-11/12 h-[150px] md:h-[280px] object-contain absolute md:top-[-200px] top-[-100px] rounded-[5px]"
-          width={150}
-          height={150}
+          className="w-11/12 object-cover absolute md:top-[-160px] top-[-100px] rounded-lg"
+          width={600}
+          height={400}
           quality={100}
           alt="Project Image"
           priority={true}
@@ -43,7 +43,7 @@ export default function Projectcard({
               {description.slice(0, 170)}{" "}
               {description.length > 170 ? "..." : ""}
             </p>
-            <div className="flex mt-2">
+            <div className="flex mt-2 flex-wrap gap-2">
               {tech.map((tech: any) => (
                 <Image
                   key={`${tech.tech}${Math.random()}`}
@@ -57,7 +57,7 @@ export default function Projectcard({
                 />
               ))}
             </div>
-            <div className="flex absolute bottom-2 gap-2 flex-wrap">
+            <div className="flex absolute right-2 bottom-2 gap-2 flex-wrap">
               {github && (
                 <Link
                   href={github}

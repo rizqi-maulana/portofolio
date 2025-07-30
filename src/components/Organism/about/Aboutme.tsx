@@ -36,21 +36,23 @@ export default function AboutMe({
             <CiBookmark className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] relative left-[-5px]" />
             <h2 className="font-bold text-xl">About Me</h2>
           </div>
-          My name is Muhammad Rizqi Maulana, I am 19 years old, a web fullstack
-          developer and technology enthusiast. I have a strong passion for
-          developing modern applications with a focus on security, and I am
-          always eager to explore new technologies and automation solutions. I
-          have experience working as a developer and mentor in several teams,
-          developing web applications using JavaScript, TypeScript, Next.js,
-          React.js, and mentoring junior developers. Being active in communities
-          and collaborative projects has enriched my skills in innovation,
-          teamwork, and adapting to the fast-evolving tech landscape. I also
-          enjoy improving SEO for websites and experimenting with automation in
-          development processes. Sharing my experiences and learning alongside
-          the developer community, especially about application security and
-          industry best practices, is something I highly value. I am open to
-          collaboration, technology discussions, and exploring fresh ideas in
-          application development.
+          <p className="md:text-sm text-[12px] mt-3">
+            My name is Muhammad Rizqi Maulana, I am 19 years old, a web
+            fullstack developer and technology enthusiast. I have a strong
+            passion for developing modern applications with a focus on security,
+            and I am always eager to explore new technologies and automation
+            solutions. I have experience working as a developer and mentor in
+            several teams, developing web applications using JavaScript,
+            TypeScript, Next.js, React.js, and mentoring junior developers.
+            Being active in communities and collaborative projects has enriched
+            my skills in innovation, teamwork, and adapting to the fast-evolving
+            tech landscape. I also enjoy improving SEO for websites and
+            experimenting with automation in development processes. Sharing my
+            experiences and learning alongside the developer community,
+            especially about application security and industry best practices,
+            is something I highly value. I am open to collaboration, technology
+            discussions, and exploring fresh ideas in application development.
+          </p>
           <a
             href="/CV M.Rizqi Maulana.pdf"
             download

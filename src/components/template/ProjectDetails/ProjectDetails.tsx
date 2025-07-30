@@ -110,7 +110,7 @@ export default function ProjectDetails() {
                   </div>
                 </div>
                 <div className="flex flex-col justify-start gap-2">
-                  <h3 className="mb-3 font-semibold">Source:</h3>
+                  <h3 className="my-3 md:mt-0 font-semibold">Source:</h3>
 
                   {ProjectGithub !== null && (
                     <AnimatedShinyLink
