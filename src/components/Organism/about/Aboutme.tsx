@@ -1,23 +1,14 @@
 import Image from "next/image";
 import { CiBookmark } from "react-icons/ci";
 import Skill from "./Skill";
-import Profile from "@/assets/image/profile.jpeg";
 import { FaFilePdf } from "react-icons/fa6";
 
 interface AboutMeType {
-  Photo: string;
-  About: string;
-  access: boolean;
-  SetShowUpdateSkill: any;
   SetShowDetailsSkill: any;
   SkillData: any;
 }
 
 export default function AboutMe({
-  Photo,
-  About,
-  access,
-  SetShowUpdateSkill,
   SetShowDetailsSkill,
   SkillData,
 }: AboutMeType) {
@@ -26,7 +17,9 @@ export default function AboutMe({
       <div>
         <div className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] hover:border-2 border-white rounded-xl md:mt-20 mt-10 mx-auto relative bg-[#151527] group">
           <Image
-            src={Photo || Profile}
+            src={
+              "https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1745204894/IMG_20241105_131603_1_rkrwci.webp"
+            }
             className="rounded-xl w-[240px] h-[240px] md:w-[300px] md:h-[300px] group-hover:transition-all duration-300 absolute md:group-hover:left-[-20px] md:group-hover:top-[-20px] group-hover:left-[-20px] group-hover:top-[-20px] left-0 top-0 object-cover group-hover:scale-110"
             width={250}
             height={250}
@@ -43,11 +36,21 @@ export default function AboutMe({
             <CiBookmark className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] relative left-[-5px]" />
             <h2 className="font-bold text-xl">About Me</h2>
           </div>
-          {About.split("\n").map((item: string, index: number) => (
-            <p key={index} className="md:text-sm text-[12px] mt-3">
-              {item}
-            </p>
-          ))}
+          My name is Muhammad Rizqi Maulana, I am 19 years old, a web fullstack
+          developer and technology enthusiast. I have a strong passion for
+          developing modern applications with a focus on security, and I am
+          always eager to explore new technologies and automation solutions. I
+          have experience working as a developer and mentor in several teams,
+          developing web applications using JavaScript, TypeScript, Next.js,
+          React.js, and mentoring junior developers. Being active in communities
+          and collaborative projects has enriched my skills in innovation,
+          teamwork, and adapting to the fast-evolving tech landscape. I also
+          enjoy improving SEO for websites and experimenting with automation in
+          development processes. Sharing my experiences and learning alongside
+          the developer community, especially about application security and
+          industry best practices, is something I highly value. I am open to
+          collaboration, technology discussions, and exploring fresh ideas in
+          application development.
           <a
             href="/CV M.Rizqi Maulana.pdf"
             download
@@ -60,9 +63,7 @@ export default function AboutMe({
         </section>
         <Skill
           SkillData={SkillData}
-          access={access}
           SetShowDetailsSkill={SetShowDetailsSkill}
-          SetShowUpdateSkill={SetShowUpdateSkill}
         />
       </div>
     </section>

@@ -6,9 +6,9 @@ import { useOutsideClick } from "@/app/hook/use-outside-click";
 import { experince } from "@/data/experience";
 
 export const Experience = () => {
-  const [active, setActive] = useState<(typeof experince)[number] | boolean | null>(
-    null
-  );
+  const [active, setActive] = useState<
+    (typeof experince)[number] | boolean | null
+  >(null);
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
 
@@ -127,11 +127,13 @@ export const Experience = () => {
                     exit={{ opacity: 0 }}
                     className="text-sm md:text-sm lg:text-base h-96 md:h-fit md:max-h-52 pb-10 overflow-y-auto flex flex-col items-start gap-4 overflow-auto text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] "
                   >
-                    {
-                      active.Content.split('\n').map((item: string, index: number) => (
-                        <p key={index} className="md:text-sm text-[12px] mt-3">{item}</p>
-                      ))
-                    }
+                    {active.Content.split("\n").map(
+                      (item: string, index: number) => (
+                        <p key={index} className="md:text-sm text-[12px] mt-3">
+                          {item}
+                        </p>
+                      )
+                    )}
                     {/* <div dangerouslySetInnerHTML={{ __html: active.Content }} /> */}
                   </motion.div>
                 </div>
@@ -153,15 +155,17 @@ export const Experience = () => {
                 <Image
                   src={card.Image}
                   alt={card.Company}
-                  className='w-[40px] h-[40px] md:w-[70px] md:h-[70px] object-cover'
+                  className="w-[40px] h-[40px] md:w-[70px] md:h-[70px] object-cover"
                   width={70}
                   height={70}
                   sizes="100vw"
                 />
               </motion.div>
               <div>
-                <h2 className='font-bold text-[15px] md:text-xl'>{card.Company}</h2>
-                <div className='text-[#999999] text-[10px] md:text-sm'>
+                <h2 className="font-bold text-[15px] md:text-xl">
+                  {card.Company}
+                </h2>
+                <div className="text-[#999999] text-[10px] md:text-sm">
                   <p>• {card.Location}</p>
                   <p>{card.Date}</p>
                 </div>
@@ -174,7 +178,7 @@ export const Experience = () => {
       </ul>
     </>
   );
-}
+};
 
 export const CloseIcon = () => {
   return (
@@ -208,35 +212,3 @@ export const CloseIcon = () => {
     </motion.svg>
   );
 };
-
-// import Image from "next/image";
-
-// interface ExperienceType {
-//   Company: string,
-//   Location: string,
-//   Date: string,
-//   ExpeImage: any
-// }
-
-// export const Experience = ({ Company, Location, Date, ExpeImage }: ExperienceType) => {
-//   return (
-//     <div className="md:h-[120px] md:w-[400px] w-[235px] h-[90px] bg-[#151527] rounded-[5px] mt-5 flex items-center justify-evenly">
-//       <Image
-//         src={ExpeImage}
-//         className='w-[40px] h-[40px] md:w-[70px] md:h-[70px] object-cover'
-//         width={70}
-//         height={70}
-//         alt="Experience image"
-//         sizes="100vw"
-//       />
-//       <div>
-//         <h2 className='font-bold text-[15px] md:text-xl'>{Company}</h2>
-//         <div className='text-[#999999] text-[10px] md:text-sm'>
-//           <p>• {Location}</p>
-//           <p>{Date}</p>
-//         </div>
-
-//       </div>
-//     </div>
-//   )
-// }

@@ -1,5 +1,4 @@
 "use client";
-// import javascript from '@/assets/image/javascript-svgrepo-com.svg'
 import Image from "next/image";
 import { cn } from "@/utils/cn";
 import React, { useEffect, useState } from "react";
@@ -30,7 +29,7 @@ export const Skillcard = ({
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
-      containerRef.current.style.setProperty("--animation-duration", "20s");
+      containerRef.current.style.setProperty("--animation-duration", "80s");
 
       scrollerContent.forEach((item) => {
         const duplicatedItem = item.cloneNode(true);

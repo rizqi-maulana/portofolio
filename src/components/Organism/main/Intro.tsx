@@ -1,29 +1,20 @@
 "use client";
 import RotatingText from "@/components/elements/rotatetext";
 import clsx from "clsx";
-import { useCallback, useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+
 const Intro = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
-  const fetchSocialMedia = async () => {
-    const response = await fetch("/api/social-media", {
-      method: "GET",
-    });
-    const data = await response.json();
-    if (data) {
-      onClose();
-    }
-  };
-
-  const onClose = useCallback(() => {
-    setTimeout(() => {
+  useEffect(() => {
+    const timeout = setTimeout(() => {
       setLoading(false);
     }, 3000);
+
+    // Cleanup jika komponen unmount sebelum timeout selesai
+    return () => clearTimeout(timeout);
   }, []);
 
-  useEffect(() => {
-    fetchSocialMedia();
-  }, []);
   return (
     <div
       className={clsx(
