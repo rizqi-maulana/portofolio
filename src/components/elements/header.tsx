@@ -58,7 +58,7 @@ export default function Header() {
             </Link>
             <Link
               href="mailto:maulanarizq@gmail.com"
-              className="hover:text-[#a9a9f6]"
+              className="bg-[#7e7eff] py-2 px-3 rounded-lg border border-transparent hover:border-[#7e7eff] hover:text-[#7e7eff] hover:bg-transparent text-white transition-colors duration-300"
             >
               Hire Me
             </Link>

@@ -50,7 +50,10 @@ export default function MobileVavbar() {
           <BiCertification className="w-[20px] h-[20px] mr-3" />
           Certificate
         </Link>
-        <Link href="mailto:maulanarizq@gmail.com" className="flex mt-2">
+        <Link
+          href="mailto:maulanarizq@gmail.com"
+          className="flex mt-2 border-b border-b-[#7e7eff]"
+        >
           <IoMailOutline className="w-[20px] h-[20px] mr-3" />
           Hire Me
         </Link>
