@@ -1,9 +1,5 @@
 import { IoMdLogOut } from "react-icons/io";
 import { IoMdSettings } from "react-icons/io";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
-import Loading from "@/app/loading";
 import Link from "next/link";
 
 export default function AccountMenu() {

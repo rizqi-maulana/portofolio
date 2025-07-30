@@ -37,7 +37,12 @@ export default function ProjectDetails() {
         setProjectTech(project.tech);
         project.github && setProjectGithub(project.github);
         project.website && setProjectLink(project.website);
-        project.github && setReadme(project.github.match(/\/([^\/]+)\/?$/)[1]);
+        if (project.github) {
+          const match = project.github.match(/\/([^\/]+)\/?$/);
+          if (match && match[1]) {
+            setReadme(match[1]);
+          }
+        }
       } else {
         setDataFound(false);
       }
