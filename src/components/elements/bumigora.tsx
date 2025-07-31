@@ -15,7 +15,7 @@ export const Bumigora = () => {
       />
       <div>
         <h2 className="font-bold text-[15px] md:text-xl text-wrap">
-          UNIVERSITAS BUMIGORA
+          Bumigora University
         </h2>
         <div className="text-[#999999] text-[10px] md:text-sm">
           <p>• Mataram, Indonesia</p>
