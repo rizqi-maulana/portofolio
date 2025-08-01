@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Bumigora = () => {
   return (
-    <div className="md:h-[120px] md:w-[480px] w-[235px] h-[90px] bg-[#151527] rounded-[5px] mt-5 flex items-center md:gap-10 md:px-10 px-5 gap-5">
+    <div className="md:h-[120px] md:w-[480px] w-full h-[90px] bg-[#151527] rounded-[5px] mt-5 flex items-center md:gap-10 md:px-10 px-5 gap-5">
       <Image
         src={bumigora}
         className="w-[50px] h-[50px] md:w-[100px] md:h-[100px] object-cover"
@@ -14,13 +14,14 @@ export const Bumigora = () => {
         sizes="100vw"
       />
       <div>
-        <h2 className="font-bold text-[15px] md:text-xl text-wrap">
-          Bumigora University
-        </h2>
-        <div className="text-[#999999] text-[10px] md:text-sm">
+        <h2 className="font-bold text-base md:text-lg">Bumigora University</h2>
+        <div className="text-white underline text-xs md:text-sm">
+          <p>• Bachelor of Software Engineering</p>
+        </div>
+        {/* <div className="text-[#999999] text-xs md:text-sm">
           <p>• Mataram, Indonesia</p>
           <p>2025 - Now</p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

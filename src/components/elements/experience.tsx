@@ -150,8 +150,11 @@ export const Experience = () => {
             onClick={() => setActive(card)}
             className="cursor-pointer"
           >
-            <div className="md:h-[120px] md:w-[480px] w-[235px] h-[90px] bg-[#151527] rounded-[5px] mt-5 flex items-center justify-evenly">
-              <motion.div layoutId={`image-${card.Company}-${id}`}>
+            <div className="md:h-[120px] md:w-[480px] w-full h-[90px] bg-[#151527] rounded-[5px] mt-5 flex md:flex-row flex-col md:items-center items-start justify-center md:justify-between px-10 pl-5">
+              <motion.div
+                layoutId={`image-${card.Company}-${id}`}
+                className="flex items-center gap-5 md:gap-10"
+              >
                 <Image
                   src={card.Image}
                   alt={card.Company}
@@ -160,18 +163,24 @@ export const Experience = () => {
                   height={70}
                   sizes="100vw"
                 />
-              </motion.div>
-              <div>
-                <h2 className="font-bold text-[15px] md:text-xl">
-                  {card.Company}
-                </h2>
-                <div className="text-[#999999] text-[10px] md:text-sm">
-                  <p>• {card.Location}</p>
-                  <p>{card.Date}</p>
+                <div className="grid gap-1">
+                  <div>
+                    <h2 className="font-bold text-base md:text-lg">
+                      {card.Company}
+                    </h2>
+                    <div className="text-[#999999] text-xs md:text-sm">
+                      <p>• {card.Location}</p>
+                      <p>{card.Date}</p>
+                    </div>
+                  </div>
+                  <p className="underline md:hidden block text-xs md:text-base">
+                    Details
+                  </p>
                 </div>
-                <p className="underline md:hidden text-[10px] mt-1">Details</p>
-              </div>
-              <p className="underline hidden md:block">Details</p>
+              </motion.div>
+              <p className="underline hidden md:block text-xs md:text-base">
+                Details
+              </p>
             </div>
           </motion.div>
         ))}

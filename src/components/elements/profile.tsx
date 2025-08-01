@@ -36,7 +36,7 @@ export default function Profile() {
               alt="Verify"
             />
           </div>
-          <p className="md:text-lg text-[10px] text-[#919191]">@Mauln</p>
+          <p className="md:text-lg text-sm text-[#919191]">@Mauln</p>
 
           <h2 className="md:text-sm text-xs md:mt-5 mt-3">Find me on</h2>
           <div className="flex justify-between md:justify-start mt-2 gap-2 md:gap-4">
@@ -92,7 +92,7 @@ export default function Profile() {
         </p>
         <Link
           href={"/about"}
-          className="text-[#838383] md:text-xs text-[10px] mt-1"
+          className="text-[#838383] md:text-sm text-xs mt-1"
         >
           Click here For More...
         </Link>

@@ -39,7 +39,7 @@ export default function Projectcard({
         <div className="p-2 md:p-4 pt-16 md:pt-24 h-[210px] md:h-[280px] flex w-full">
           <div className="px-2">
             <h2 className="font-bold md:text-xl text-xs">{title}</h2>
-            <p className="md:text-sm text-[10px]">
+            <p className="md:text-sm text-xs">
               {description.slice(0, 170)}{" "}
               {description.length > 170 ? "..." : ""}
             </p>
@@ -66,7 +66,7 @@ export default function Projectcard({
                   rel="noopener noreferrer"
                 >
                   <FaGithub className="mr-1" />{" "}
-                  <p className="md:text-sm text-[10px]">Repository</p>
+                  <p className="md:text-sm text-xs">Repository</p>
                 </Link>
               )}
               {website && (
@@ -78,7 +78,7 @@ export default function Projectcard({
                 >
                   {" "}
                   <MdOpenInNew className="mr-1" />{" "}
-                  <p className="md:text-sm text-[10px]">Visit</p>
+                  <p className="md:text-sm text-xs">Visit</p>
                 </Link>
               )}
               <Link
@@ -86,7 +86,7 @@ export default function Projectcard({
                 className="flex items-center"
               >
                 <TbListDetails className="mr-1" />{" "}
-                <p className="md:text-sm text-[10px]">Details</p>
+                <p className="md:text-sm text-xs">Details</p>
               </Link>
             </div>
           </div>

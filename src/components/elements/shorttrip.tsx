@@ -4,8 +4,8 @@ export default function ShortTrip() {
       <div className="flex items-center w-full">
         <div className="h-[10px] w-[10px] bg-[#767580] mr-1 rounded-full" />
         <div className="text-wrap w-[300px]">
-          <h2 className="text-[13px] md:text-sm text-[#767580]">2021-2022</h2>
-          <p className="text-[10px] md:text-[13px]">
+          <h2 className="text-xs md:text-sm text-[#767580]">2021-2022</h2>
+          <p className="text-xs md:text-sm">
             Junior high school students start learning programming from Java,
             Javascript and Lua.
           </p>
@@ -16,10 +16,10 @@ export default function ShortTrip() {
       <div className="flex items-center w-full">
         <div className="h-[10px] w-[10px] bg-[#767580] mr-1 rounded-full" />
         <div className="text-wrap w-[300px]">
-          <h2 className="text-[13px] md:text-sm text-[#767580]">
+          <h2 className="text-xs md:text-sm text-[#767580]">
             Jul 2022 - May 2025
           </h2>
-          <p className="text-[10px] md:text-[13px]">
+          <p className="text-xs md:text-sm">
             started focusing on web development.
           </p>
         </div>

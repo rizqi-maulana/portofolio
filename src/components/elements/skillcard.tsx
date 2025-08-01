@@ -98,7 +98,7 @@ export const Skillcard = ({
                 priority={true}
                 quality={100}
               />
-              <h3 className="text-[10px] md:text-sm ml-2">{item.name}</h3>
+              <h3 className="text-xs md:text-sm ml-2">{item.name}</h3>
             </div>
           </li>
         ))}
