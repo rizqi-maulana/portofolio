@@ -24,18 +24,6 @@ export const experince: Array<any> = [
           `
   },
   {
-    Company: "Full Stack Lombok",
-    Location: "Mataram, NTB, Indonesia",
-    Date: "Jul 2024 - Dec 2024",
-    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1745027718/219126600_788506168486826_6855691997392164754_n-removebg-preview_1_jp5heu.webp',
-    Link: "https://fullstacklombok.com",
-    Content: `Front-End Developer - Full Stack Lombok
-           • Develop and Maintain Web Applications: Create and maintain web applications using JavaScript, TypeScript, React.js, and Next.js.
-• Collaborate with Teams: Meet with clients and team members to discuss project requirements and updates.
-• Implement and Test Features: Integrate and test new features, ensuring compatibility across browsers and devices.
-          `
-  },
-  {
     Company: "UnboxLabs",
     Location: "Tangerang, Banten, Indonesia",
     Date: "Sep 2023 - Jan 2024",
