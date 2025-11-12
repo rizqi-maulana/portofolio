@@ -81,7 +81,7 @@ Recognized as top productivity app by local tech community
 This project demonstrates my ability to deliver secure, scalable solutions addressing real-world operational challenges through innovative technical implementations.
 
 `,
-    website: "https://scanhadir.com",
+    website: "https://scanhadirku.id",
     thumb:
       "https://res.cloudinary.com/dju3jontk/image/upload/v1762918234/Solusi_Absensi_Digital_Profesional__QR_Code_-mh_bbctbz.webp",
     tech: [
