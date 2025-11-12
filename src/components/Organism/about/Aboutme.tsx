@@ -18,7 +18,7 @@ export default function AboutMe({
         <div className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] hover:border-2 border-white rounded-xl md:mt-20 mt-10 mx-auto relative bg-[#151527] group">
           <Image
             src={
-              "https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1745204894/IMG_20241105_131603_1_rkrwci.webp"
+              "https://res.cloudinary.com/dju3jontk/image/upload/v1762918093/MVIMG_20250622_114929_2_1_hsiltu.webp"
             }
             className="rounded-xl w-[240px] h-[240px] md:w-[300px] md:h-[300px] group-hover:transition-all duration-300 absolute md:group-hover:left-[-20px] md:group-hover:top-[-20px] group-hover:left-[-20px] group-hover:top-[-20px] left-0 top-0 object-cover group-hover:scale-110"
             width={250}

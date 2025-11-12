@@ -83,7 +83,7 @@ This project demonstrates my ability to deliver secure, scalable solutions addre
 `,
     website: "https://scanhadir.com",
     thumb:
-      "https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1753873148/Screenshot_2025-07-30_185620_kozzuh.webp",
+      "https://res.cloudinary.com/dju3jontk/image/upload/v1762918234/Solusi_Absensi_Digital_Profesional__QR_Code_-mh_bbctbz.webp",
     tech: [
       {
         name: "JavaScript",

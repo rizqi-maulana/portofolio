@@ -15,7 +15,7 @@ export default function Profile() {
       <div className="flex md:items-center">
         <Image
           src={
-            "https://res.cloudinary.com/dju3jontk/image/upload/q_100/v1745204894/IMG_20241105_131603_1_rkrwci.webp"
+            "https://res.cloudinary.com/dju3jontk/image/upload/v1762918093/MVIMG_20250622_114929_2_1_hsiltu.webp"
           }
           quality={100}
           className="rounded-full md:w-[300px] md:h-[300px] w-[100px] h-[100px] object-cover"
