@@ -146,7 +146,7 @@ export const Experience = () => {
         {experince.map((card, index) => (
           <motion.div
             layoutId={`card-${card.Company}-${id}`}
-            key={card.Company}
+            key={index}
             onClick={() => setActive(card)}
             className="cursor-pointer"
           >

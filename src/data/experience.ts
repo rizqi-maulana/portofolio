@@ -2,6 +2,20 @@
 
 export const experince: Array<any> = [
   {
+    Company: "Full Code Studios",
+    Location: "United Kingdom",
+    Date: "Jul 2024 - Now",
+    Image: 'https://res.cloudinary.com/dju3jontk/image/upload/v1771481466/Frame_1_qfyv0k.svg',
+    Link: "https://fullcodestudios.com",
+    Content: `Full Stack Developer - Full Code Studios
+         • Developed custom, mobile-first websites using JavaScript, TypeScript, React.js, Next.js, Node.js for international clients.
+• Integrated APIs (e.g., Stripe, PayPal, Zoom, Calendly), payment gateways, and secure authentication (JWT/OAuth) into scalable web apps.
+• Collaborated with clients on requirements and delivered high-performance sites with SEO optimization and fast loading times.
+• Managed full deployment pipelines with Cloudflare, GitHub, SSH/cPanel, and database design (MySQL/PostgreSQL).
+• Tested features for cross-browser/device compatibility, ensuring reliability and scalability.
+`
+  },
+  {
     Company: "Cloud Gakkai",
     Location: "Tangerang, Indonesia",
     Date: "Jan 2024 - Dec 2024",
