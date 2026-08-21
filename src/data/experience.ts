@@ -4,7 +4,7 @@ export const experince: Array<any> = [
   {
     Company: "Full Code Studios",
     Location: "United Kingdom",
-    Date: "Jul 2024 - Apr 2026",
+    Date: "Jul 2024 - Now",
     Image: 'https://res.cloudinary.com/dju3jontk/image/upload/v1771481466/Frame_1_qfyv0k.svg',
     Link: "https://fullcodestudios.com",
     Content: `Full Stack Developer - Full Code Studios
